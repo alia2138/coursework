@@ -1,0 +1,229 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #ffffff;
+}
+
+/* LAYOUT */
+.layout {
+    display: flex;
+    height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 250px;
+    background: #e4f6fd;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+/* TOP */
+.sidebar-top {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.logo {
+    color: #00bfff;
+    font-size: 26px;
+}
+
+/* MENU */
+.menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.menu-item {
+    padding: 12px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.menu-item:hover {
+    background: #e4f6fd;
+}
+
+.menu-item.active {
+    background: #e4f6fd;
+    border: 2px solid #00bfff;
+}
+
+/* BOTTOM */
+.sidebar-bottom {
+    margin-top: auto;
+}
+
+/* SHOP BUTTON */
+.shop-btn {
+    width: 100%;
+    padding: 14px;
+    background: #00bfff;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* hover */
+.shop-btn:hover {
+    background: #00aeff;
+}
+
+/* click */
+.shop-btn:active {
+    transform: scale(0.96);
+}
+
+/* MAIN */
+.main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* TOPBAR */
+.topbar {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    padding: 15px;
+}
+
+.stat {
+    background: #e4f6fd;
+    padding: 8px 12px;
+    border-radius: 20px;
+}
+
+/* LEVELS */
+.levels-container {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* LEVEL CARD */
+.level-card {
+    background: #00bfff;
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 15px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+/* hover */
+.level-card:hover {
+    transform: scale(1.02);
+}
+
+/* LOCKED */
+.level-card.locked {
+    background: #ccc;
+}
+
+/*PROGRESS*/
+.progress-container {
+    text-align: center;
+    margin: 20px;
+}
+
+.progress-bar {
+    width: 80%;
+    height: 20px;
+    background: #e4f6fd;
+    border-radius: 20px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.progress-fill {
+    height: 100%;
+    background: #00bfff;
+    transition: 0.5s;
+}
+
+/* 📱 MOBILE ADAPTIVE */
+@media (max-width: 980px ) {
+
+    .layout {
+        flex-direction: column;
+    }
+
+    /* SIDEBAR → в ряд зверху */
+    .sidebar {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        padding: 15px;
+    }
+
+    .sidebar-top {
+        gap: 10px;
+    }
+
+    /* меню мов в ряд */
+    .menu {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 8px;
+    }
+
+    .menu-item {
+        flex: 1;
+        text-align: center;
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* магазин вниз */
+    .sidebar-bottom {
+        margin-top: 10px;
+    }
+
+    .shop-btn {
+        width: 100%;
+    }
+
+    /* TOPBAR по центру */
+    .topbar {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* РІВНІ */
+    .levels-container {
+        padding: 10px;
+        gap: 10px;
+    }
+
+    .level-card {
+        padding: 15px;
+        font-size: 14px;
+    }
+
+    .level-number {
+        font-size: 16px;
+    }
+
+    .level-title {
+        font-size: 14px;
+    }
+}

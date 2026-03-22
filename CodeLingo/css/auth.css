@@ -1,0 +1,67 @@
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Карточка */
+.auth-card {
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    width: 400px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+/* Заголовки */
+.auth-card h2 {
+    margin-bottom: 20px;
+}
+
+/* Інпути */
+form input {
+    width: 89%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 2px solid #d0eaff;
+    border-radius: 10px;
+    transition: 0.2s;
+}
+
+form input:focus {
+    border-color: #00bfff;
+    outline: none;
+}
+
+/* Кнопка */
+button {
+    width: 96%;
+    padding: 12px;
+    background-color: #00bfff;
+    color: #ffffff;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    background-color: #009acd;
+}
+
+/* Лінки */
+a {
+    color: #00aeff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+@media (max-width: 980px) {
+    .auth-card {
+        width: 70%;
+        padding: 20px;
+    }
+}
