@@ -10,6 +10,7 @@ if (registerForm) {
 
         alert("Користувач " + name + " зареєстрований!");
     });
+
 }
 
 // Логін
@@ -21,4 +22,8 @@ if (loginForm) {
 
         alert("Успішний вхід!");
     });
+}
+
+function toHome() {
+    window.location.href = "home.html";
 }

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Вибір мови</title>
+    <link rel="stylesheet" href="../css/choose-language.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>З якої мови почнемо?</h1>
+
+    <div class="languages">
+
+        <div class="lang-card" onclick="selectLang(this, 'en')">C#</div>
+        <div class="lang-card" onclick="selectLang(this, 'de')">C++</div>
+        <div class="lang-card" onclick="selectLang(this, 'pl')">Css</div>
+        <div class="lang-card" onclick="selectLang(this, 'es')">HTML</div>
+
+    </div>
+
+    <p id="error" class="error"></p>
+
+    <button onclick="confirmLang()">Обрати мову</button>
+
+</div>
+
+<script src="../js/choose-language.js"></script>
+
+</body>
+</html>
