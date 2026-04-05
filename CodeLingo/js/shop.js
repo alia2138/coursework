@@ -5,6 +5,6 @@ function buyLife(price) {
         gems -= price;
         alert("Куплено ❤️!");
     } else {
-        alert("Недостатньо алмазів 💎!");
+        alert("Недостатньо алмазів!");
     }
 }

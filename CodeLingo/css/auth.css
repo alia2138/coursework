@@ -1,67 +1,102 @@
+/* фон */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff);
+}
+
+/* контейнер */
 .auth-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    padding: 20px;
 }
 
-/* Карточка */
+/* картка */
 .auth-card {
-    background: #ffffff;
+    background: #fff;
     padding: 40px;
     border-radius: 20px;
-    width: 400px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     text-align: center;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
 }
 
-/* Заголовки */
+/* логотип */
+.logo {
+    margin-bottom: 10px;
+    color: #2196f3;
+}
+
+/* заголовок */
 .auth-card h2 {
     margin-bottom: 20px;
 }
 
-/* Інпути */
-form input {
-    width: 89%;
+/* інпути */
+.auth-card input {
+    width: 90%;
     padding: 12px;
-    margin: 10px 0;
-    border: 2px solid #d0eaff;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
     border-radius: 10px;
-    transition: 0.2s;
+    font-size: 16px;
+    transition: 0.3s;
 }
 
-form input:focus {
-    border-color: #00bfff;
+.auth-card input:focus {
+    border-color: #2196f3;
     outline: none;
 }
 
-/* Кнопка */
-button {
-    width: 96%;
+/* кнопка */
+.auth-card button {
+    width: 97.5%;
     padding: 12px;
-    background-color: #00bfff;
-    color: #ffffff;
     border: none;
-    border-radius: 12px;
-    font-weight: bold;
+    border-radius: 10px;
+    background: #2196f3;
+    color: white;
+    font-size: 16px;
     cursor: pointer;
-    transition: 0.2s;
+    transition: 0.3s;
 }
 
-button:hover {
-    background-color: #009acd;
+.auth-card button:hover {
+    background: #1976d2;
 }
 
-/* Лінки */
-a {
-    color: #00aeff;
+/* текст */
+.auth-card p {
+    margin-top: 15px;
+}
+
+.auth-card a {
+    color: #2196f3;
     text-decoration: none;
-    font-weight: bold;
 }
 
-@media (max-width: 980px) {
+/* 📱 АДАПТАЦІЯ */
+@media (max-width: 500px) {
     .auth-card {
-        width: 70%;
-        padding: 20px;
+        padding: 25px;
+        border-radius: 15px;
+    }
+
+    .logo {
+        font-size: 24px;
+    }
+
+    .auth-card h2 {
+        font-size: 20px;
+    }
+
+    .auth-card input,
+    .auth-card button {
+        font-size: 14px;
+        padding: 10px;
     }
 }

@@ -2,12 +2,12 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeLingo - Вхід</title>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/auth.css">
 </head>
 <body>
-
 <div class="auth-container">
     <div class="auth-card">
 
@@ -15,10 +15,10 @@
         <h2>Увійти</h2>
 
         <form id="loginForm">
-            <input type="email" placeholder="Email" required>
-            <input type="password" placeholder="Пароль" required>
+            <input type="email" id="login" placeholder="Email" required>
+            <input type="password" id="password" placeholder="Пароль" required>
 
-            <button onclick="toHome()" type="submit" >Увійти</button>
+            <button type="submit" >Увійти</button>
         </form>
 
         <p>
@@ -29,6 +29,8 @@
     </div>
 </div>
 
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/auth.js"></script>
+<script src="../js/main.js"></script>
 </body>
 </html>

@@ -15,13 +15,11 @@ function confirmLang() {
     const error = document.getElementById('error');
 
     if (!selectedLanguage) {
-        error.textContent = "❗ Обери мову перед продовженням";
+        error.textContent = "Обери мову перед продовженням";
         return;
     }
 
-    // зберігаємо (поки що локально)
     localStorage.setItem("language", selectedLanguage);
 
-    // перехід далі
     window.location.href = "home.html";
 }

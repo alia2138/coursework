@@ -12,7 +12,6 @@ if (registerForm) {
     });
 
 }
-
 // Логін
 const loginForm = document.getElementById("loginForm");
 
@@ -20,10 +19,14 @@ if (loginForm) {
     loginForm.addEventListener("submit", function(e) {
         e.preventDefault();
 
-        alert("Успішний вхід!");
-    });
-}
+        const login = document.getElementById("login").value;
+        const password = document.getElementById("password").value;
 
-function toHome() {
-    window.location.href = "home.html";
+        if (login === "admin@gmail.com" && password === "2138") {
+            window.location.href = "admin.html";
+        } else {
+            window.location.href = "home.html";
+        }
+        alert("Вхід успішний!")
+    });
 }

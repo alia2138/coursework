@@ -3,3 +3,74 @@ body {
     font-family: 'Segoe UI', sans-serif;
     background-color: #eaf6ff;
 }
+
+.swal2-popup {
+    border-radius: 16px !important;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+.swal2-icon {
+    border-color: #00bfff !important;
+    color: #00bfff !important;
+}
+
+/* 📱 ГЛОБАЛЬНА АДАПТИВНІСТЬ */
+
+@media (max-width: 600px) {
+
+    body {
+        font-size: 14px;
+    }
+
+    /* КОНТЕЙНЕРИ */
+    .container {
+        padding: 15px;
+    }
+
+    /* КАРТКИ */
+    .card {
+        padding: 12px;
+        margin-top: 10px;
+    }
+
+    /* КНОПКИ */
+    button {
+        width: 100%;
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* INPUT */
+    input, select {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    /* GRID */
+    .languages {
+        grid-template-columns: 1fr;
+    }
+
+    /* МАГАЗИН */
+    .shop-items {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* РІВНІ */
+    .level-card {
+        padding: 12px;
+        font-size: 14px;
+    }
+
+    /* TOPBAR */
+    .topbar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+        width: 100%;
+    }
+}

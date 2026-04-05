@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Адмін панель</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+
+<div class="container">
+
+    <h1>⚙️ Адмін панель</h1>
+
+    <!-- ДОДАТИ УРОК -->
+    <div class="card">
+        <h2>➕ Додати урок</h2>
+        <input type="text" id="lessonTitle" placeholder="Назва уроку">
+        <button onclick="addLesson()">Додати урок</button>
+    </div>
+
+    <!-- ДОДАТИ ПИТАННЯ -->
+    <div class="card">
+        <h2>➕ Додати питання</h2>
+
+        <select id="lessonSelect"></select>
+
+        <input type="text" id="questionText" placeholder="Питання">
+        <input type="text" id="answer" placeholder="Правильна відповідь">
+
+    </div>
+
+    <button class="back-btn" onclick="goBack()">⬅ Назад</button>
+
+</div>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="../js/main.js"></script>
+
+</body>
+</html>

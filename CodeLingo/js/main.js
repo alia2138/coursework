@@ -1,11 +1,3 @@
-function toggleMenu() {
-    const sidebar = document.getElementById("sidebar");
-    const overlay = document.querySelector(".overlay");
-
-    sidebar.classList.toggle("active");
-    overlay.classList.toggle("active");
-}
-
 function goToShop() {
     window.location.href = "shop.html";
 }
@@ -21,3 +13,16 @@ function goBack() {
 function toChose() {
     window.location.href = "choose-language.html";
 }
+
+window.alert = function(message) {
+    Swal.fire({
+        text: message,
+        icon: 'info',
+        timer: 2000,
+        showConfirmButton: false,
+        background: '#ffffff',
+        color: '#333',
+        backdrop: false
+    });
+};
+
