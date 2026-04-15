@@ -10,8 +10,32 @@ if (registerForm) {
 
         alert("Користувач " + name + " зареєстрований!");
     });
-
 }
+function register() {
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    fetch("https://localhost:7241/api/auth/register", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            name: name,
+            email: email,
+            password: password
+        })
+    })
+        .then(res => res.text())
+        .then(data => {
+            alert(data);
+        });
+    toChose();
+}
+
+
 // Логін
 const loginForm = document.getElementById("loginForm");
 
@@ -29,4 +53,33 @@ if (loginForm) {
         }
         alert("Вхід успішний!")
     });
+}
+
+function login() {
+
+    const email = document.getElementById("email").value;
+    const password = document.getElementById("password").value;
+
+    fetch("https://localhost:7241/api/auth/login", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ email, password })
+    })
+        .then(res => {
+            if (!res.ok) throw new Error();
+            return res.json();
+        })
+        .then(user => {
+
+            localStorage.setItem("user", JSON.stringify(user));
+
+            alert("Успішний вхід ✅");
+
+            window.location.href = "home.html";
+        })
+        .catch(() => {
+            alert("Невірний email або пароль ❌");
+        });
 }

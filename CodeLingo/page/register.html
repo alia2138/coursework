@@ -2,6 +2,7 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeLingo - Реєстрація</title>
     <link rel="stylesheet" href="../css/main.css">
@@ -20,7 +21,7 @@
             <input type="email" id="email" placeholder="Email" required>
             <input type="password" id="password" placeholder="Пароль" required>
 
-            <button onclick="toChose()" type="submit">Зареєструватися</button>
+            <button onclick="register()" type="submit">Зареєструватися</button>
         </form>
 
         <p>
