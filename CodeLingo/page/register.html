@@ -2,7 +2,6 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline' 'unsafe-eval';">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeLingo - Реєстрація</title>
     <link rel="stylesheet" href="../css/main.css">
@@ -16,12 +15,11 @@
         <h1 class="logo">CodeLingo</h1>
         <h2>Створи акаунт</h2>
 
-        <form id="registerForm">
-            <input type="text" id="name" placeholder="Ім'я" required>
-            <input type="email" id="email" placeholder="Email" required>
-            <input type="password" id="password" placeholder="Пароль" required>
-
-            <button onclick="register()" type="submit">Зареєструватися</button>
+        <form onsubmit="register(event)">
+            <input id="name" required>
+            <input id="email" required>
+            <input id="password" required>
+            <button type="submit">Реєстрація</button>
         </form>
 
         <p>
@@ -31,8 +29,10 @@
 
     </div>
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/auth.js"></script>
 <script src="../js/main.js"></script>
+
 </body>
 </html>

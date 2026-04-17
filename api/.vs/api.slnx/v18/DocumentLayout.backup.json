@@ -3,16 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F9E2DED1-825A-475B-8B54-F2A6B465A3D4}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9E2DED1-825A-475B-8B54-F2A6B465A3D4}|api\\api.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9E2DED1-825A-475B-8B54-F2A6B465A3D4}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9E2DED1-825A-475B-8B54-F2A6B465A3D4}|api\\api.csproj|solutionrelative:api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F9E2DED1-825A-475B-8B54-F2A6B465A3D4}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F9E2DED1-825A-475B-8B54-F2A6B465A3D4}|api\\api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,8 +30,32 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "api\\Models\\RegisterRequest.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\RegisterRequest.cs",
+              "RelativeToolTip": "api\\Models\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T16:21:00.033Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "api\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "api\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-16T16:14:07.297Z"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -32,14 +64,14 @@
               "RelativeDocumentMoniker": "api\\Controllers\\AuthController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\AuthController.cs",
               "RelativeToolTip": "api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T07:08:21.07Z",
+              "WhenOpened": "2026-04-16T16:13:25.914Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "User.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\User.cs",
               "RelativeDocumentMoniker": "api\\Models\\User.cs",
@@ -47,12 +79,11 @@
               "RelativeToolTip": "api\\Models\\User.cs",
               "ViewState": "AgIAAAIAAAAAAAAAAAAxwAYAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T06:41:47.1Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-15T06:41:47.1Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Program.cs",
               "RelativeDocumentMoniker": "api\\Program.cs",
@@ -60,8 +91,7 @@
               "RelativeToolTip": "api\\Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T05:17:06.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-15T05:17:06.46Z"
             }
           ]
         }
