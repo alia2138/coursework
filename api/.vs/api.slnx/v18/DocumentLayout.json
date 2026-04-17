@@ -3,20 +3,36 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Migrations\\20260417221112_AddCorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:api\\Migrations\\20260417221112_AddCorrect.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\createquestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\createquestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\createlessondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\createlessondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,68 +46,124 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RegisterRequest.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\RegisterRequest.cs",
-              "RelativeDocumentMoniker": "api\\Models\\RegisterRequest.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\RegisterRequest.cs",
-              "RelativeToolTip": "api\\Models\\RegisterRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "DocumentIndex": 0,
+              "Title": "20260417221112_AddCorrect.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Migrations\\20260417221112_AddCorrect.cs",
+              "RelativeDocumentMoniker": "api\\Migrations\\20260417221112_AddCorrect.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Migrations\\20260417221112_AddCorrect.cs",
+              "RelativeToolTip": "api\\Migrations\\20260417221112_AddCorrect.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T16:21:00.033Z"
+              "WhenOpened": "2026-04-17T22:11:12.454Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "LoginRequest.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\LoginRequest.cs",
-              "RelativeDocumentMoniker": "api\\Models\\LoginRequest.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\LoginRequest.cs",
-              "RelativeToolTip": "api\\Models\\LoginRequest.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAABAAAAAAAAAA==",
+              "Title": "QuestionController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\QuestionController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\QuestionController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\QuestionController.cs",
+              "RelativeToolTip": "api\\Controllers\\QuestionController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T16:14:07.297Z"
+              "WhenOpened": "2026-04-17T22:04:24.225Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "api\\Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "api\\Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAARAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "api\\Models\\Question.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Question.cs",
+              "RelativeToolTip": "api\\Models\\Question.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAwAQAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-16T16:13:25.914Z",
+              "WhenOpened": "2026-04-17T21:52:42.541Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\User.cs",
-              "RelativeDocumentMoniker": "api\\Models\\User.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\User.cs",
-              "RelativeToolTip": "api\\Models\\User.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAxwAYAAAApAAAAAAAAAA==",
+              "Title": "CreateQuestionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\CreateQuestionDTO.cs",
+              "RelativeDocumentMoniker": "api\\Models\\CreateQuestionDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\CreateQuestionDTO.cs",
+              "RelativeToolTip": "api\\Models\\CreateQuestionDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T06:41:47.1Z"
+              "WhenOpened": "2026-04-17T22:03:25.005Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "api\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T16:46:39.33Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "api\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "api\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T16:30:39.883Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "CreateLessonDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\CreateLessonDTO.cs",
+              "RelativeDocumentMoniker": "api\\Models\\CreateLessonDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\CreateLessonDTO.cs",
+              "RelativeToolTip": "api\\Models\\CreateLessonDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAEAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T20:57:33.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Program.cs",
               "RelativeDocumentMoniker": "api\\Program.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Program.cs",
               "RelativeToolTip": "api\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAPAAAAAAAAAA==",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAACEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-15T05:17:06.46Z"
+              "WhenOpened": "2026-04-17T16:50:19.279Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "LessonController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\LessonController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\LessonController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\LessonController.cs",
+              "RelativeToolTip": "api\\Controllers\\LessonController.cs",
+              "ViewState": "AgIAABIAAAAAAAAAAAAYwCYAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T16:49:29.431Z",
+              "EditorCaption": ""
             }
           ]
         }

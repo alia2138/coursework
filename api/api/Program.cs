@@ -22,20 +22,16 @@ builder.Services.AddCors(options =>
                         .AllowAnyHeader());
 });
 
-// 🔹 SWAGGER (для тестування)
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-// 🔹 ВКЛЮЧАЄМО SWAGGER
 app.UseSwagger();
 app.UseSwaggerUI();
 
-// 🔹 CORS
 app.UseCors("AllowAll");
 
-// 🔹 РОУТИ
 app.UseAuthorization();
 app.MapControllers();
 

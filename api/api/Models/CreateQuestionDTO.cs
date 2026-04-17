@@ -1,23 +1,11 @@
-﻿using System.Text.Json.Serialization;
-
-namespace api.Models
+﻿namespace api.Models
 {
-    public class Question
+    public class CreateQuestionDTO
     {
-        public int Id { get; set; }
-
         public string Text { get; set; }
-
         public string Type { get; set; }
-
         public string OptionsJson { get; set; }
-
         public string CorrectAnswer { get; set; }
-
         public int LessonId { get; set; }
-
-        [JsonIgnore]
-        public Lesson Lesson { get; set; }
-
     }
 }
