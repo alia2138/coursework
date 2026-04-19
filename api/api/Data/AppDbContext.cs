@@ -13,4 +13,19 @@ public class AppDbContext : DbContext
         : base(options)
     {
     }
+
+    protected override void OnModelCreating(ModelBuilder modelBuilder)
+    {
+        modelBuilder.Entity<Lesson>()
+            .HasOne(l => l.Course)
+            .WithMany(c => c.Lessons)
+            .HasForeignKey(l => l.CourseId)
+            .OnDelete(DeleteBehavior.Cascade);
+
+        modelBuilder.Entity<Question>()
+            .HasOne(q => q.Lesson)
+            .WithMany(l => l.Questions)
+            .HasForeignKey(q => q.LessonId)
+            .OnDelete(DeleteBehavior.Cascade);
+    }
 }

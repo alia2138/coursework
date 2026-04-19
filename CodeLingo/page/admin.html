@@ -4,41 +4,75 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Адмін панель</title>
-    <link rel="stylesheet" href="../css/admin.css">
+
     <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/admin.css">
+
+    <style>
+        body { padding: 20px; }
+        .hidden { display: none; }
+        .block { margin-bottom: 25px; }
+        textarea { width: 100%; height: 80px; }
+        button { margin: 5px; }
+    </style>
 </head>
 <body>
 
-<div class="container">
+<h1>Адмін панель</h1>
 
-    <h1>Адмін панель</h1>
-    <h2>Додати курс</h2>
-
-    <input id="courseName" placeholder="Назва курсу">
-    <button onclick="addCourse()">Додати курс</button>
-
-    <h2>Додати урок</h2>
+<!-- COURSE -->
+<div class="block">
+    <h2>Курс</h2>
 
     <select id="courseSelect"></select>
-    <input id="lessonTitle" placeholder="Назва уроку">
-    <button onclick="addLesson()">Додати урок</button>
+    <input id="courseInput" class="hidden" placeholder="Назва курсу">
 
-    <!-- ДОДАТИ ПИТАННЯ -->
-    <div class="card">
-        <h2>➕ Додати питання</h2>
-
-        <select id="lessonSelect"></select>
-
-        <input type="text" id="questionText" placeholder="Питання">
-        <input type="text" id="answer" placeholder="Правильна відповідь">
-
-    </div>
-
-    <button class="back-btn" onclick="goBack()">⬅ Назад</button>
-
+    <button onclick="handleCourseBtn()">➕</button>
+    <button onclick="editCourse()">✏️</button>
+    <button onclick="deleteCourse()">🗑</button>
 </div>
+
+<!-- LESSON -->
+<div class="block">
+    <h2>Урок</h2>
+
+    <select id="lessonSelect"></select>
+
+    <input id="lessonTitleInput" class="hidden" placeholder="Назва уроку">
+    <textarea id="lessonTheoryInput" class="hidden" placeholder="Теорія"></textarea>
+
+    <button onclick="handleLessonBtn()">➕</button>
+    <button onclick="editLesson()">✏️</button>
+    <button onclick="deleteLesson()">🗑</button>
+
+    <div id="lessonInfo"></div>
+</div>
+
+<!-- QUESTION -->
+<div class="block">
+    <h2>Питання</h2>
+
+    <select id="questionSelect"></select>
+
+    <input id="questionText" class="hidden" placeholder="Питання">
+
+    <select id="questionType" class="hidden" onchange="changeQuestionType()">
+        <option value="test">Тест</option>
+        <option value="code">Код</option>
+        <option value="order">Послідовність</option>
+    </select>
+
+    <div id="dynamicFields"></div>
+
+    <button onclick="handleQuestionBtn()">➕</button>
+    <button onclick="editQuestion()">✏️</button>
+    <button onclick="deleteQuestion()">🗑</button>
+
+    <div id="questionPreview"></div>
+</div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../js/main.js"></script>
+<script src="../js/admin.js"></script>
 
 </body>
 </html>

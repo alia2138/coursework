@@ -44,3 +44,17 @@ button:hover {
     display: block;
     margin: 20px auto;
 }
+
+.hidden {
+    display: none;
+}
+
+.option-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.option-row input {
+    flex: 1;
+}

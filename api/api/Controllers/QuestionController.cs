@@ -60,5 +60,36 @@ namespace api.Controllers
                 correctAnswer = question.CorrectAnswer
             });
         }
+        [HttpPut("{id}")]
+        public IActionResult UpdateQuestion(int id, [FromBody] CreateQuestionDTO dto)
+        {
+            var q = _context.Questions.FirstOrDefault(x => x.Id == id);
+
+            if (q == null)
+                return NotFound();
+
+            q.Text = dto.Text;
+            q.Type = dto.Type;
+            q.OptionsJson = dto.OptionsJson;
+            q.CorrectAnswer = dto.CorrectAnswer;
+            q.LessonId = dto.LessonId;
+
+            _context.SaveChanges();
+
+            return Ok(q);
+        }
+        [HttpDelete("{id}")]
+        public IActionResult DeleteQuestion(int id)
+        {
+            var q = _context.Questions.FirstOrDefault(x => x.Id == id);
+
+            if (q == null)
+                return NotFound("Питання не знайдено");
+
+            _context.Questions.Remove(q);
+            _context.SaveChanges();
+
+            return Ok("Питання видалено");
+        }
     }
 }

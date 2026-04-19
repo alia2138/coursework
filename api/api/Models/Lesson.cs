@@ -8,8 +8,7 @@ namespace api.Models
         public string Title { get; set; }
         public string Theory { get; set; }
         public int CourseId { get; set; }
-        [JsonIgnore]
         public Course Course { get; set; }
-
+        public ICollection<Question> Questions { get; set; } 
     }
 }

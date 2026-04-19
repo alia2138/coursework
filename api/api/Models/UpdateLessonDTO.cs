@@ -1,9 +1,8 @@
 ﻿namespace api.Models
 {
-    public class CreateLessonDTO
+    public class UpdateLessonDTO
     {
         public string Title { get; set; }
         public string Theory { get; set; }
-        public int CourseId { get; set; }
     }
 }
