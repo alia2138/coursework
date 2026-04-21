@@ -17,10 +17,6 @@ if (!window.location.pathname.includes("login.html") &&
         window.location.href = "login.html";
     }
 }
-function logout() {
-    localStorage.removeItem("user");
-    window.location.href = "login.html";
-}
 
 function goToShop() {
     window.location.href = "shop.html";

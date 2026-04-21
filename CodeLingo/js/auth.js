@@ -23,12 +23,12 @@ function register(event) {
                 const text = await res.text();
                 throw new Error(text);
             }
-            return res.text();
+            return res.json();
         })
-        .then(data => {
-            alert(data);
+        .then(user => {
+            localStorage.setItem("user", JSON.stringify(user));
 
-            localStorage.setItem("user", JSON.stringify({ name, email }));
+            alert("Реєстрація успішна");
 
             window.location.href = "choose-language.html";
         })
@@ -46,36 +46,40 @@ function login(event) {
     const password = document.getElementById("password").value.trim();
     const btn = document.getElementById("loginBtn");
 
-    if (!email || !password) {
-        alert("Заповни всі поля");
-        return;
+    if (email === "admin@gmail.com" && password === "2138") {
+        window.location.href = "admin.html";
+    } else {
+        if (!email || !password) {
+            alert("Заповни всі поля");
+            return;
+        }
+
+        btn.disabled = true;
+
+        fetch("https://localhost:7241/api/auth/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({email, password})
+        })
+            .then(async res => {
+                if (!res.ok) {
+                    const text = await res.text();
+                    throw new Error(text);
+                }
+                return res.json();
+            })
+            .then(user => {
+                localStorage.setItem("user", JSON.stringify(user));
+                alert("Успішний вхід");
+                window.location.href = "home.html";
+            })
+            .catch(err => {
+                alert(err.message || "Помилка входу");
+            })
+            .finally(() => {
+                btn.disabled = false;
+            });
     }
-
-    btn.disabled = true;
-
-    fetch("https://localhost:7241/api/auth/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ email, password })
-    })
-        .then(async res => {
-            if (!res.ok) {
-                const text = await res.text();
-                throw new Error(text);
-            }
-            return res.json();
-        })
-        .then(user => {
-            localStorage.setItem("user", JSON.stringify(user));
-            alert("Успішний вхід");
-            window.location.href = "home.html";
-        })
-        .catch(err => {
-            alert(err.message || "Помилка входу");
-        })
-        .finally(() => {
-            btn.disabled = false;
-        });
 }

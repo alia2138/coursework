@@ -9,10 +9,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -32,22 +28,10 @@
               "RelativeDocumentMoniker": "api\\Controllers\\QuestionController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\QuestionController.cs",
               "RelativeToolTip": "api\\Controllers\\QuestionController.cs",
-              "ViewState": "AgIAAEAAAAAAAAAAAADwv1wAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAEQAAAAAAAAAAAAowHsAAAAZAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T22:04:24.225Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CourseController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\CourseController.cs",
-              "RelativeDocumentMoniker": "api\\Controllers\\CourseController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\CourseController.cs",
-              "RelativeToolTip": "api\\Controllers\\CourseController.cs",
-              "ViewState": "AgIAACUAAAAAAAAAAAAUwDgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-17T16:46:39.33Z"
             },
             {
               "$type": "Document",
@@ -57,7 +41,7 @@
               "RelativeDocumentMoniker": "api\\Controllers\\LessonController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\LessonController.cs",
               "RelativeToolTip": "api\\Controllers\\LessonController.cs",
-              "ViewState": "AgIAAEoAAAAAAAAAAAAgwGYAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-17T16:49:29.431Z"
             }

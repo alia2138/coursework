@@ -1,4 +1,5 @@
 ﻿using api.Data;
+using api.DTO;
 using api.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -16,7 +17,7 @@ namespace api.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetCourses()
+        public IActionResult GetAll()
         {
             return Ok(_context.Courses.ToList());
         }

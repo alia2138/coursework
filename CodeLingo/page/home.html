@@ -4,96 +4,60 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CodeLingo</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/home.css">
+
+    <style>
+        .menu-item.locked {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
 <body>
 
 <div class="layout">
 
-    <!-- SIDEBAR -->
     <aside class="sidebar">
 
-        <!-- ВЕРХ -->
         <div class="sidebar-top">
             <h1 class="logo">CodeLingo</h1>
 
-            <div class="menu">
-                <div class="menu-item active">C#</div>
-                <div class="menu-item">C++</div>
-                <div class="menu-item">Css</div>
-                <div class="menu-item">HTML</div>
-            </div>
+            <div class="menu" id="courseMenu"></div>
         </div>
 
-        <!-- НИЗ -->
         <div class="sidebar-bottom">
-            <button class="profile-btn" onclick="goToProfile()">Профіль</button>
-
-            <button class="shop-btn" onclick="goToShop()">Магазин</button>
+            <button class ="profile-btn" onclick="goToProfile()">Профіль</button>
+            <button class ="shop-btn" onclick="goToShop()">Магазин</button>
         </div>
 
     </aside>
 
-    <!-- MAIN -->
     <main class="main">
 
         <div class="topbar">
-            <div class="stat">🔥 5</div>
-            <div class="stat">❤️ 3</div>
-            <div class="stat">💎 120</div>
+            <div class="stat">🔥 <span id="streak">0</span></div>
+            <div class="stat">❤️ <span id="hearts">0</span></div>
+            <div class="stat">💎 <span id="diamonds">0</span></div>
         </div>
 
-        <!-- ПРОГРЕС -->
         <div class="progress-container">
             <div class="progress-bar">
-                <div class="progress-fill" style="width: 40%;"></div>
+                <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
             </div>
-            <p>Прогрес: 40%</p>
+            <p id="progressText">Прогрес: 0%</p>
         </div>
 
-        <!-- РІВНІ -->
-        <div class="levels-container">
-
-            <div class="level-card">
-                <div>
-                    <div class="level-number">Рівень 1</div>
-                    <div class="level-title">Основи C#</div>
-                </div>
-                <div>▶</div>
-            </div>
-
-            <div class="level-card">
-                <div>
-                    <div class="level-number">Рівень 2</div>
-                    <div class="level-title">Змінні</div>
-                </div>
-                <div>▶</div>
-            </div>
-
-            <div class="level-card">
-                <div>
-                    <div class="level-number">Рівень 3</div>
-                    <div class="level-title">Умови</div>
-                </div>
-                <div>▶</div>
-            </div>
-
-            <div class="level-card locked">
-                <div>
-                    <div class="level-number">Рівень 4</div>
-                    <div class="level-title">Цикли</div>
-                </div>
-                <div>🔒</div>
-            </div>
-
-        </div>
+        <div class="levels-container" id="levelsContainer"></div>
 
     </main>
 
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <script src="../js/main.js"></script>
+<script src="../js/home.js"></script>
 
 </body>
 </html>

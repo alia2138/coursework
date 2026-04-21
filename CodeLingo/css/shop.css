@@ -51,7 +51,7 @@
 /* кнопка назад */
 .back-btn {
     display: block;
-    width: 250px; /* 🔥 замість 41.5% */
+    width: 41.5%;
     max-width: 90%;
     margin: 20px auto;
     padding: 14px;

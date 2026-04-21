@@ -33,7 +33,7 @@
   },
   {
     "ContainingType": "api.Controllers.CourseController",
-    "Method": "GetCourses",
+    "Method": "GetAll",
     "RelativePath": "api/Course",
     "HttpMethod": "GET",
     "IsController": true,
@@ -104,7 +104,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "api.Models.CreateLessonDTO",
+        "Type": "api.DTO.CreateLessonDTO",
         "IsRequired": true
       }
     ],
@@ -141,7 +141,7 @@
       },
       {
         "Name": "dto",
-        "Type": "api.Models.UpdateLessonDTO",
+        "Type": "api.DTO.CreateLessonDTO",
         "IsRequired": true
       }
     ],
@@ -189,7 +189,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "api.Models.CreateQuestionDTO",
+        "Type": "api.DTO.CreateQuestionDTO",
         "IsRequired": true
       }
     ],
@@ -210,7 +210,7 @@
       },
       {
         "Name": "dto",
-        "Type": "api.Models.CreateQuestionDTO",
+        "Type": "api.DTO.CreateQuestionDTO",
         "IsRequired": true
       }
     ],
@@ -257,14 +257,110 @@
     "Order": 0,
     "Parameters": [
       {
-        "Name": "questionId",
+        "Name": "dto",
+        "Type": "api.Controllers.QuestionController\u002BCheckDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.QuestionController",
+    "Method": "GetQuestion",
+    "RelativePath": "api/Question/get/{id}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "id",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.UserController",
+    "Method": "GetUserCourses",
+    "RelativePath": "api/User/{userId}/courses",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.UserController",
+    "Method": "SelectCourse",
+    "RelativePath": "api/User/select-course",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "api.DTO.SelectCourseDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.UserCourseController",
+    "Method": "AddUserCourse",
+    "RelativePath": "api/UserCourse",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "api.Models.UserCourse",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.UserCourseController",
+    "Method": "RemoveUserCourse",
+    "RelativePath": "api/UserCourse",
+    "HttpMethod": "DELETE",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
         "Type": "System.Int32",
         "IsRequired": false
       },
       {
-        "Name": "answer",
-        "Type": "System.String",
+        "Name": "courseId",
+        "Type": "System.Int32",
         "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.UserCourseController",
+    "Method": "GetUserCourses",
+    "RelativePath": "api/UserCourse/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
       }
     ],
     "ReturnTypes": []

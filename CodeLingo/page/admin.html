@@ -2,19 +2,10 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Адмін панель</title>
-
-    <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/admin.css">
-
-    <style>
-        body { padding: 20px; }
-        .hidden { display: none; }
-        .block { margin-bottom: 25px; }
-        textarea { width: 100%; height: 80px; }
-        button { margin: 5px; }
-    </style>
+    <link rel="stylesheet" href="../css/main.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body>
 
@@ -22,30 +13,46 @@
 
 <!-- COURSE -->
 <div class="block">
-    <h2>Курс</h2>
+    <h2>Курси</h2>
 
     <select id="courseSelect"></select>
-    <input id="courseInput" class="hidden" placeholder="Назва курсу">
+    <input id="courseInput" placeholder="Назва курсу">
 
-    <button onclick="handleCourseBtn()">➕</button>
-    <button onclick="editCourse()">✏️</button>
-    <button onclick="deleteCourse()">🗑</button>
+    <button class="admin-btn" onclick="saveCourse()">💾 Зберегти  </button>
+    <button class="admin-btn" onclick="fillCourse()">✏️ Редагувати  </button>
+    <button class="admin-btn" onclick="deleteCourse()">🗑 Видалити  </button>
 </div>
 
 <!-- LESSON -->
 <div class="block">
-    <h2>Урок</h2>
+    <h2>Уроки</h2>
 
     <select id="lessonSelect"></select>
 
-    <input id="lessonTitleInput" class="hidden" placeholder="Назва уроку">
-    <textarea id="lessonTheoryInput" class="hidden" placeholder="Теорія"></textarea>
+    <input id="lessonTitle" placeholder="Назва уроку">
+    <textarea id="lessonTheory" placeholder="Теорія" oninput="autoResize(this)"></textarea>
 
-    <button onclick="handleLessonBtn()">➕</button>
-    <button onclick="editLesson()">✏️</button>
-    <button onclick="deleteLesson()">🗑</button>
+    <script>
+        function autoResize(textarea) {
+            textarea.style.height = 'auto';
+            textarea.style.height = textarea.scrollHeight + 'px';
+        }
+    </script>
 
-    <div id="lessonInfo"></div>
+    <style>
+        #lessonTheory {
+            width: 100%;
+            min-height: 50px;
+            overflow-y: hidden;
+            resize: none;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <button class="admin-btn" onclick="saveLesson()">💾 Зберегти </button>
+    <button class="admin-btn" onclick="fillLesson()">✏️ Редагувати </button>
+    <button class="admin-btn" onclick="deleteLesson()">🗑 Видалити </button>
 </div>
 
 <!-- QUESTION -->
@@ -54,25 +61,270 @@
 
     <select id="questionSelect"></select>
 
-    <input id="questionText" class="hidden" placeholder="Питання">
+    <input id="questionText" placeholder="Питання">
 
-    <select id="questionType" class="hidden" onchange="changeQuestionType()">
+    <select id="questionType" onchange="renderFields()">
         <option value="test">Тест</option>
         <option value="code">Код</option>
-        <option value="order">Послідовність</option>
     </select>
 
-    <div id="dynamicFields"></div>
+    <div id="fields"></div>
 
-    <button onclick="handleQuestionBtn()">➕</button>
-    <button onclick="editQuestion()">✏️</button>
-    <button onclick="deleteQuestion()">🗑</button>
+    <button onclick="addField()">➕ Додати </button>
 
-    <div id="questionPreview"></div>
+    <button class="admin-btn" onclick="saveQuestion()">💾 Зберегти </button>
+    <button class="admin-btn" onclick="fillQuestion()">✏️ Редагувати </button>
+    <button class="admin-btn" onclick="deleteQuestion()">🗑 Видалити </button>
+
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../js/admin.js"></script>
+<script>
+    const API = "https://localhost:7241/api";
+
+    let editCourse = null;
+    let editLesson = null;
+    let editQuestion = null;
+    let editQuestionId = null;
+
+    // ---------------- COURSES ----------------
+    function loadCourses(sel=null){
+        fetch(API+"/course").then(r=>r.json()).then(data=>{
+            courseSelect.innerHTML="";
+            data.forEach(c=>{
+                courseSelect.innerHTML+=`<option value="${c.id}">${c.name}</option>`;
+            });
+            if(sel) courseSelect.value=sel;
+            loadLessons();
+        });
+    }
+
+    function saveCourse(){
+        let name=courseInput.value.trim();
+        if(!name) return alert("Введи назву");
+
+        fetch(API+"/course"+(editCourse?"/"+editCourse:""),{
+            method:editCourse?"PUT":"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({name})
+        }).then(()=>{
+            editCourse=null;
+            courseInput.value="";
+            loadCourses();
+        });
+    }
+
+    function fillCourse(){
+        editCourse=courseSelect.value;
+        courseInput.value=courseSelect.selectedOptions[0].text;
+    }
+
+    function deleteCourse(){
+        fetch(API+"/course/"+courseSelect.value,{method:"DELETE"})
+            .then(()=>loadCourses());
+    }
+
+    // ---------------- LESSONS ----------------
+    function loadLessons(sel=null){
+        fetch(API+"/lesson/"+courseSelect.value)
+            .then(r=>r.json())
+            .then(data=>{
+                lessonSelect.innerHTML="";
+                data.forEach(l=>{
+                    lessonSelect.innerHTML+=`<option value="${l.id}">${l.title}</option>`;
+                });
+                if(sel) lessonSelect.value=sel;
+                loadQuestions();
+            });
+    }
+
+    function saveLesson(){
+        let title=lessonTitle.value.trim();
+        let theory=lessonTheory.value.trim();
+
+        if(!title||!theory) return alert("Заповни поля");
+
+        fetch(API+"/lesson"+(editLesson?"/"+editLesson:""),{
+            method:editLesson?"PUT":"POST",
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+                title,
+                theory,
+                courseId:Number(courseSelect.value)
+            })
+        }).then(()=>{
+            editLesson=null;
+            lessonTitle.value="";
+            lessonTheory.value="";
+            loadLessons();
+        });
+    }
+
+    function fillLesson(){
+        let id=lessonSelect.value;
+
+        fetch(API+"/lesson/single/"+id)
+            .then(r=>r.json())
+            .then(l=>{
+                editLesson=id;
+                lessonTitle.value=l.title;
+                lessonTheory.value=l.theory;
+            });
+    }
+
+    function deleteLesson(){
+        fetch(API+"/lesson/"+lessonSelect.value,{method:"DELETE"})
+            .then(()=>loadLessons());
+    }
+
+    // ---------------- QUESTIONS ----------------
+    function loadQuestions(){
+        fetch(API+"/question/"+lessonSelect.value)
+            .then(r=>r.json())
+            .then(data=>{
+                questionSelect.innerHTML="";
+                data.forEach(q=>{
+                    questionSelect.innerHTML+=`<option value="${q.id}">${q.text}</option>`;
+                });
+            });
+    }
+
+    function renderFields() {
+        const type = questionType.value;
+        fields.innerHTML = "";
+
+        if (type === "test") {
+            for (let i = 0; i < 4; i++) {
+                fields.innerHTML += `
+                <div class="option-row">
+                    <input class="opt" placeholder="Варіант ${i+1}">
+                    <input type="radio" name="correct">
+                </div>
+            `;
+            }
+        }
+
+        if (type === "code") {
+            fields.innerHTML = `<textarea id="codeAnswer"></textarea>`;
+        }
+    }
+
+    function addField(val=""){
+        let div=document.createElement("div");
+        div.className="option-row";
+
+        if(questionType.value==="test"){
+            div.innerHTML=`
+<input class="opt" value="${val}">
+<input type="radio" name="correct">
+<button onclick="this.parentElement.remove()">x</button>
+`;
+        }
+
+        fields.appendChild(div);
+    }
+
+    function saveQuestion(){
+        let text=questionText.value.trim();
+        if(!text) return alert("Питання пусте");
+
+        let type=questionType.value;
+        let options=[];
+        let correct="";
+
+        if(type==="test"){
+            let inputs=document.querySelectorAll(".opt");
+            let radios=document.querySelectorAll("input[name='correct']");
+
+            inputs.forEach((i,idx)=>{
+                let v=i.value.trim();
+                if(v){
+                    options.push(v);
+                    if(radios[idx].checked) correct=v;
+                }
+            });
+
+            if(options.length<2) return alert("мін 2 варіанти");
+            if(!correct) return alert("обери правильну");
+        }
+
+        if(type==="code"){
+            correct=document.getElementById("codeAnswer").value.trim();
+            if(!correct) return alert("код пустий");
+        }
+
+        const url = editQuestionId
+            ? API + "/question/" + editQuestionId
+            : API + "/question";
+
+        const method = editQuestionId ? "PUT" : "POST";
+
+        fetch(url, {
+            method: method,
+            headers:{'Content-Type':'application/json'},
+            body:JSON.stringify({
+                text,
+                type,
+                optionsJson:JSON.stringify(options),
+                correctAnswer:correct,
+                lessonId:Number(lessonSelect.value)
+            })
+        }).then(()=>{
+            editQuestion=null;
+            questionText.value="";
+            fields.innerHTML="";
+            loadQuestions();
+        });
+        const textarea = document.getElementById('lessonTheory');
+    }
+
+    function fillQuestion() {
+        const id = questionSelect.value;
+        if (!id) return alert("Обери питання");
+
+        fetch(API + "/question/get/" + id)
+            .then(r => r.json())
+            .then(q => {
+
+                editQuestionId = id;
+
+                questionText.value = q.text;
+                questionType.value = q.type;
+
+                renderFields();
+
+                const options = JSON.parse(q.optionsJson || "[]");
+
+                if (q.type === "test") {
+                    const inputs = document.querySelectorAll(".opt");
+                    const radios = document.querySelectorAll("input[name='correct']");
+
+                    inputs.forEach((input, i) => {
+                        input.value = options[i] || "";
+
+                        if (options[i] === q.correctAnswer) {
+                            radios[i].checked = true;
+                        }
+                    });
+                }
+
+                if (q.type === "code") {
+                    document.getElementById("codeAnswer").value = q.correctAnswer;
+                }
+            });
+    }
+
+    function deleteQuestion(){
+        fetch(API+"/question/"+questionSelect.value,{method:"DELETE"})
+            .then(()=>loadQuestions());
+    }
+
+    // ---------------- EVENTS ----------------
+    courseSelect.onchange=()=>loadLessons();
+    lessonSelect.onchange=()=>loadQuestions();
+
+    // старт
+    loadCourses();
+</script>
 
 </body>
 </html>

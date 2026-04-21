@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../css/main.css">
+    <title>Урок</title>
+    <style>
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+        }
+
+        .title {
+            font-size: 28px;
+            font-weight: bold;
+            margin-bottom: 20px;
+        }
+
+        .theory-box {
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            line-height: 1.6;
+        }
+
+        .btn {
+            margin-top: 20px;
+            width: 100%;
+            padding: 15px;
+            border: none;
+            border-radius: 10px;
+            background: #00bfff;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background: #009acd;
+        }
+    </style>
+
+</head>
+<body>
+
+<div class="container">
+
+    <div class="title" id="lessonTitle">Завантаження...</div>
+
+    <div class="theory-box" id="lessonTheory">
+        Завантаження теорії...
+    </div>
+
+    <button class="btn" onclick="startQuiz()">Перейти до тестування</button>
+
+</div>
+
+<script src="../js/lesson.js"></script>
+</body>
+</html>

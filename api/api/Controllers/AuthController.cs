@@ -21,29 +21,36 @@ namespace backend.Controllers
         [HttpPost("register")]
         public IActionResult Register([FromBody] RegisterRequest request)
         {
-            if (string.IsNullOrEmpty(request.Name) ||
-                string.IsNullOrEmpty(request.Email) ||
-                string.IsNullOrEmpty(request.Password))
+            if (string.IsNullOrEmpty(request.Email) ||
+                string.IsNullOrEmpty(request.Password) ||
+                string.IsNullOrEmpty(request.Name))
             {
                 return BadRequest("Заповни всі поля");
             }
 
             if (_context.Users.Any(u => u.Email == request.Email))
-            {
-                return BadRequest("Користувач вже існує");
-            }
+                return BadRequest("Такий email вже існує");
 
             var user = new User
             {
                 Name = request.Name,
-                Email = request.Email,
-                Password = _hasher.HashPassword(null, request.Password)
+                Email = request.Email
             };
+
+            user.Password = _hasher.HashPassword(user, request.Password);
 
             _context.Users.Add(user);
             _context.SaveChanges();
 
-            return Ok("Реєстрація успішна ");
+            return Ok(new
+            {
+                user.Id,
+                user.Name,
+                user.Email,
+                user.Hearts,
+                user.Diamonds,
+                user.Streak
+            });
         }
 
         [HttpPost("login")]

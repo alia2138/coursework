@@ -1,5 +1,6 @@
 ﻿using api.Data;
 using api.Models;
+using api.DTO;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.Controllers
@@ -18,18 +19,10 @@ namespace api.Controllers
         [HttpPost]
         public IActionResult AddLesson([FromBody] CreateLessonDTO dto)
         {
-            if (string.IsNullOrWhiteSpace(dto.Title))
-                return BadRequest("Назва уроку обовʼязкова");
-
-            var courseExists = _context.Courses.Any(c => c.Id == dto.CourseId);
-
-            if (!courseExists)
-                return BadRequest("Курс не знайдено");
-
             var lesson = new Lesson
             {
                 Title = dto.Title,
-                Theory = dto.Theory, 
+                Theory = dto.Theory,
                 CourseId = dto.CourseId
             };
 
@@ -39,6 +32,7 @@ namespace api.Controllers
             return Ok(lesson);
         }
 
+        // 🔹 ОТРИМАТИ УРОКИ ПО КУРСУ
         [HttpGet("{courseId}")]
         public IActionResult GetLessons(int courseId)
         {
@@ -48,13 +42,14 @@ namespace api.Controllers
                 {
                     l.Id,
                     l.Title,
-                    l.Theory 
+                    l.Theory
                 })
                 .ToList();
 
             return Ok(lessons);
         }
 
+        // 🔹 ОТРИМАТИ 1 УРОК
         [HttpGet("single/{id}")]
         public IActionResult GetLesson(int id)
         {
@@ -73,13 +68,14 @@ namespace api.Controllers
 
             return Ok(lesson);
         }
+
         [HttpPut("{id}")]
-        public IActionResult UpdateLesson(int id, [FromBody] UpdateLessonDTO dto)
+        public IActionResult UpdateLesson(int id, [FromBody] CreateLessonDTO dto)
         {
             var lesson = _context.Lessons.FirstOrDefault(l => l.Id == id);
 
             if (lesson == null)
-                return NotFound();
+                return NotFound("Урок не знайдено");
 
             lesson.Title = dto.Title;
             lesson.Theory = dto.Theory;
@@ -88,6 +84,7 @@ namespace api.Controllers
 
             return Ok(lesson);
         }
+
         [HttpDelete("{id}")]
         public IActionResult DeleteLesson(int id)
         {
