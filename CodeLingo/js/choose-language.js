@@ -65,6 +65,10 @@ function confirmLang() {
             window.location.href = "home.html";
         })
         .catch(err => {
-            alert(err.message || "Помилка");
+            Swal.fire({
+                icon: "error",
+                title: "Помилка!",
+                confirmButtonText: ""
+            })
         });
 }

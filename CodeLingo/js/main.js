@@ -1,3 +1,4 @@
+const API = "https://localhost:7241/api";
 
 window.alert = function(message) {
     Swal.fire({
@@ -17,6 +18,29 @@ if (!window.location.pathname.includes("login.html") &&
         window.location.href = "login.html";
     }
 }
+
+fetch(API + "/user/1")
+    .then(r => r.json())
+    .then(u => {
+        // Оновлюємо вогники, серця та діаманти за їх ID
+        const streakEl = document.getElementById("streak");
+        const heartsEl = document.getElementById("hearts");
+        const diamondsEl = document.getElementById("diamonds");
+
+        if (streakEl) streakEl.textContent = u.streak;
+        if (heartsEl) heartsEl.textContent = u.hearts;
+        if (diamondsEl) diamondsEl.textContent = u.diamonds;
+
+        // Якщо хочеш оновити ще й прогрес-бар:
+        const progressFill = document.getElementById("progressFill");
+        const progressText = document.getElementById("progressText");
+
+        if (progressFill && u.progress) {
+            progressFill.style.width = u.progress + "%";
+            progressText.textContent = `Прогрес: ${u.progress}%`;
+        }
+    })
+    .catch(err => console.error("Помилка завантаження даних:", err));
 
 function goToShop() {
     window.location.href = "shop.html";

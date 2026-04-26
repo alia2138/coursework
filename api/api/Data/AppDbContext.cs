@@ -10,6 +10,7 @@ public class AppDbContext : DbContext
     public DbSet<Course> Courses { get; set; }
     public DbSet<Lesson> Lessons { get; set; }
     public DbSet<UserCourse> UserCourses { get; set; }
+    public DbSet<Progress> Progresses { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)

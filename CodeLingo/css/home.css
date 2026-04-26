@@ -167,7 +167,10 @@ body {
 .profile-btn:active {
     transform: scale(0.96);
 }
-
+.locked {
+    opacity: 0.5;
+    pointer-events: none;
+}
 @media (max-width: 600px) {
 
     /* layout */

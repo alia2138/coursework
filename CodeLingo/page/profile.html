@@ -2,10 +2,62 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профіль</title>
+
     <link rel="stylesheet" href="../css/profile.css">
     <link rel="stylesheet" href="../css/main.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <style>
+        .profile-container {
+            max-width: 700px;
+            margin: auto;
+        }
+
+        .card {
+            background: white;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 12px;
+        }
+
+        .course-card {
+            margin-top: 15px;
+            padding: 15px;
+            border-radius: 12px;
+            background: #f5faff;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .progress-bar {
+            width: 220px;
+            height: 14px;
+            background: #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #00bfff, #007acc);
+        }
+
+        canvas {
+            margin-top: 20px;
+            max-width: 250px;
+            max-height: 250px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
 </head>
 <body>
 
@@ -13,30 +65,106 @@
 
     <h1>Мій профіль</h1>
 
-    <div class="card">
-        <h2>Інформація</h2>
-        <p><b>Ім'я:</b> User123</p>
-        <p><b>Email:</b> user@gmail.com</p>
-    </div>
-
-    <div class="card">
-        <h2>Статистика</h2>
-        <p>🔥 Серія: 5 днів</p>
-        <p>❤️ Життя: 3</p>
-        <p>💎 Валюта: 120</p>
-    </div>
+    <div class="card" id="userInfo"></div>
+    <div class="card" id="userStats"></div>
 
     <div class="card">
         <h2>Курси</h2>
-        <p>C# — 40%</p>
-        <p>Python — 10%</p>
+        <div id="coursesContainer"></div>
+
+        <canvas id="pieChart"></canvas>
     </div>
 
-    <button class="back-btn" onclick="goBack()">⬅ Назад</button>
+    <div class="buttons">
+        <button class="back-btn" onclick="goBack()">Назад</button>
+        <button class="back-btn logout" onclick="logout()">Вийти</button>
+    </div>
 
 </div>
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-<script src="../js/main.js"></script>
+<script>
+    const API = "https://localhost:7241/api";
+    const user = JSON.parse(localStorage.getItem("user"));
 
+    if (!user) {
+        alert("Немає користувача");
+        location.href = "login.html";
+    }
+
+    // 🔹 ІНФА
+    document.getElementById("userInfo").innerHTML = `
+    <h2>Інформація</h2>
+    <p><b>Ім'я:</b> ${user.name}</p>
+    <p><b>Email:</b> ${user.email}</p>
+`;
+
+    // 🔹 СТАТИСТИКА
+    document.getElementById("userStats").innerHTML = `
+    <h2>Статистика</h2>
+    <p>🔥 Серія: ${user.streak}</p>
+    <p>❤️ Життя: ${user.hearts}</p>
+    <p>💎 Валюта: ${user.diamonds}</p>
+`;
+
+    // 🔥 ГОЛОВНИЙ API
+    fetch(API + "/progress/full/" + user.id)
+        .then(r => r.json())
+        .then(data => {
+
+            const container = document.getElementById("coursesContainer");
+
+            let chartLabels = [];
+            let chartData = [];
+
+            data.forEach(c => {
+
+                let percent = c.total > 0
+                    ? Math.round((c.correct / c.total) * 100)
+                    : 0;
+
+                let lessonPercent = c.lessonsTotal > 0
+                    ? Math.round((c.lessonsDone / c.lessonsTotal) * 100)
+                    : 0;
+
+                container.innerHTML += `
+                <div class="course-card">
+                    <h3>${c.course}</h3>
+
+                    <div class="row">
+                        <span>${c.correct}/${c.total}</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width:${percent}%"></div>
+                        </div>
+                    </div>
+
+                    <div class="row" style="margin-top:10px;">
+                        <span>Уроки: ${c.lessonsDone}/${c.lessonsTotal}</span>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width:${lessonPercent}%"></div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+                chartLabels.push(c.course);
+                chartData.push(c.lessonsDone);
+            });
+
+            // 🔥 PIE CHART
+            new Chart(document.getElementById("pieChart"), {
+                type: "pie",
+                data: {
+                    labels: chartLabels,
+                    datasets: [{
+                        data: chartData
+                    }]
+                }
+            });
+
+        })
+        .catch(() => {
+            Swal.fire("Помилка", "Не вдалося завантажити прогрес", "error");
+        });
+</script>
+<script src="../js/main.js"></script>
 </body>
 </html>

@@ -4,8 +4,12 @@ const lessonId = localStorage.getItem("lessonId");
 
 let questions = [];
 let current = 0;
+let progress = 0;
 let selectedAnswer = null;
 let dragItem = null;
+
+// 🔥 НОВЕ
+let correctCount = 0;
 
 // 🔹 Завантаження
 fetch(API + "/question/" + lessonId)
@@ -54,32 +58,10 @@ function showQuestion() {
     if (q.type === "code") {
         container.innerHTML = `<textarea id="codeAnswer" placeholder="Введи код..."></textarea>`;
     }
-
-    // 🔹 ORDER
-    if (q.type === "order") {
-        const items = JSON.parse(q.optionsJson);
-
-        const list = document.createElement("div");
-        list.id = "dragList";
-
-        items.forEach(text => {
-            const div = document.createElement("div");
-            div.className = "draggable";
-            div.innerText = text;
-            div.draggable = true;
-
-            addDragEvents(div);
-
-            list.appendChild(div);
-        });
-
-        container.appendChild(list);
-    }
 }
 
-// 🔹 Drag логіка
+// 🔹 Drag
 function addDragEvents(el) {
-
     el.addEventListener("dragstart", () => {
         dragItem = el;
         el.classList.add("dragging");
@@ -89,9 +71,7 @@ function addDragEvents(el) {
         el.classList.remove("dragging");
     });
 
-    el.addEventListener("dragover", (e) => {
-        e.preventDefault();
-    });
+    el.addEventListener("dragover", (e) => e.preventDefault());
 
     el.addEventListener("drop", (e) => {
         e.preventDefault();
@@ -112,10 +92,11 @@ function addDragEvents(el) {
     });
 }
 
+// 🔹 ПЕРЕВІРКА
 function checkAnswer() {
 
     const q = questions[current];
-    let userAnswer = "";
+    let isCorrect = false;
 
     // 🔹 TEST
     if (q.type === "test") {
@@ -129,76 +110,46 @@ function checkAnswer() {
             return;
         }
 
-        const normalize = (str) =>
-            str.trim().toLowerCase();
+        const normalize = (str) => str.trim().toLowerCase();
 
-        if (normalize(selectedAnswer) === normalize(q.correctAnswer)) {
+        isCorrect = normalize(selectedAnswer) === normalize(q.correctAnswer);
+
+        if (isCorrect)  {
+            correctCount++;
+            progress++;
+            updateProgress();
             Swal.fire({
                 icon: "success",
                 title: "Молодець!",
                 text: "Ця відповідь була правильна"
             });
-        } else {Swal.fire({
+        } else {
+            Swal.fire({
                 icon: "error",
                 title: "От халепа!",
                 text: "Ти помилився"
-        });
+            });
         }
 
-        userAnswer = selectedAnswer;
         nextQuestion();
     }
 
     // 🔹 CODE
     if (q.type === "code") {
 
-        const normalize = (str) => {
-            return str
-                .replace(/\s+/g, " ")
-                .replace(/\n/g, "")
-                .replace(/\r/g, "")
-                .replace(/\t/g, "")
+        const normalize = (str) =>
+            str.replace(/\s+/g, "")
                 .replace(/;/g, "")
-                .trim()
                 .toLowerCase();
-        };
 
         const user = document.getElementById("codeAnswer").value;
-        const correct = q.correctAnswer;
 
-        const userNorm = normalize(user);
-        const correctNorm = normalize(correct);
+        isCorrect = normalize(user) === normalize(q.correctAnswer);
 
-        if (userNorm === correctNorm) {
-            Swal.fire({
-                icon: "success",
-                title: "Молодець!",
-                text: "Ця відповідь була правильна"
-            });
-        } else {
-            Swal.fire({
-                icon: "error",
-                title: "От халепа!",
-                text: "Ти помилився"
-            });
-        }
-
-        nextQuestion();
-    }
-
-    // 🔹 ORDER
-    if (q.type === "order") {
-
-        const items = document.querySelectorAll("#dragList .draggable");
-
-        let userArr = [];
-        items.forEach(i => userArr.push(i.innerText.trim()));
-
-        let correctArr = [];
-
-        const isCorrect = JSON.stringify(userArr) === JSON.stringify(correctArr);
-
-        if (isCorrect) {
+        if (isCorrect)  {
+            correctCount++;
+            progress++;
+            updateProgress();
             Swal.fire({
                 icon: "success",
                 title: "Молодець!",
@@ -216,17 +167,57 @@ function checkAnswer() {
     }
 }
 
+// 🔹 НАСТУПНЕ
 function nextQuestion() {
     current++;
 
     if (current >= questions.length) {
-        Swal.fire({
-            icon: "success",
-            title: "Урок завершено!",
-            text: "Ти відповів правильно на ?/? питань"});
-        window.location.href = "home.html";
+        finishLesson();
         return;
     }
 
     showQuestion();
 }
+
+// 🔥 ГОЛОВНЕ — ЗАВЕРШЕННЯ УРОКУ
+function finishLesson() {
+
+    fetch(API + "/progress", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            userId: 1,
+            lessonId: Number(lessonId),
+            correctAnswers: correctCount,
+            totalQuestions: questions.length
+        })
+    })
+        .then(r => r.json())
+        .then(res => {
+
+            if (res.isCompleted) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Урок пройдено!",
+                    text: `Правильно: ${correctCount}/${questions.length} | Нагорода: ${res.reward} 💎`
+                }).then(() => {
+                    window.location.href = "home.html";
+                });
+
+            } else {
+                Swal.fire({
+                    icon: "error",
+                    title: "Недостатньо балів",
+                    text: `Правильно: ${correctCount}/${questions.length} (${res.percent}%)`
+                }).then(() => {
+                    window.location.href = "home.html";
+                });
+            }
+        });
+}
+
+function updateProgress() {
+    const percent = (progress / questions.length) * 100;
+    document.getElementById("progressFill").style.width = percent + "%";
+}
+

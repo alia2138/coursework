@@ -3,17 +3,14 @@ using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// 🔹 ПІДКЛЮЧЕННЯ ДО MySQL
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseMySql(
         builder.Configuration.GetConnectionString("DefaultConnection"),
         ServerVersion.AutoDetect(builder.Configuration.GetConnectionString("DefaultConnection"))
     ));
 
-// 🔹 КОНТРОЛЕРИ
 builder.Services.AddControllers();
 
-// 🔹 CORS (щоб фронт працював)
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll",
@@ -25,14 +22,26 @@ builder.Services.AddCors(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-var app = builder.Build();
+var app = builder.Build(); 
+app.Use(async (context, next) =>
+{
+    context.Response.Headers.Add(
+        "Content-Security-Policy",
+        "script-src 'self' https://cdn.jsdelivr.net 'unsafe-inline';"
+    );
+
+    await next();
+});
 
 app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseCors("AllowAll");
 
+app.UseHttpsRedirection(); 
+
 app.UseAuthorization();
+
 app.MapControllers();
 
 app.Run();

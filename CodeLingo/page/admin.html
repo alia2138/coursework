@@ -100,7 +100,11 @@
 
     function saveCourse(){
         let name=courseInput.value.trim();
-        if(!name) return alert("Введи назву");
+        if(!name) return Swal.fire({
+            icon: "error",
+            title: "Помилка!",
+            text: "Заповніть поля."
+        });
 
         fetch(API+"/course"+(editCourse?"/"+editCourse:""),{
             method:editCourse?"PUT":"POST",
@@ -110,6 +114,10 @@
             editCourse=null;
             courseInput.value="";
             loadCourses();
+            Swal.fire({
+                icon: "info",
+                title: "Курс збережено!"
+            });
         });
     }
 
@@ -121,6 +129,10 @@
     function deleteCourse(){
         fetch(API+"/course/"+courseSelect.value,{method:"DELETE"})
             .then(()=>loadCourses());
+        Swal.fire({
+            icon: "info",
+            title: "Курс видалено!"
+        });
     }
 
     // ---------------- LESSONS ----------------
@@ -141,7 +153,11 @@
         let title=lessonTitle.value.trim();
         let theory=lessonTheory.value.trim();
 
-        if(!title||!theory) return alert("Заповни поля");
+        if(!title||!theory) return Swal.fire({
+            icon: "error",
+            title: "Помилка!",
+            text: "Заповніть поля!"
+        });
 
         fetch(API+"/lesson"+(editLesson?"/"+editLesson:""),{
             method:editLesson?"PUT":"POST",
@@ -156,6 +172,10 @@
             lessonTitle.value="";
             lessonTheory.value="";
             loadLessons();
+        });
+        Swal.fire({
+            icon: "onfo",
+            title: "Уок збережено"
         });
     }
 
@@ -174,6 +194,10 @@
     function deleteLesson(){
         fetch(API+"/lesson/"+lessonSelect.value,{method:"DELETE"})
             .then(()=>loadLessons());
+        Swal.fire({
+            icon: "info",
+            title: "Урок видалено"
+        });
     }
 
     // ---------------- QUESTIONS ----------------
@@ -225,7 +249,11 @@
 
     function saveQuestion(){
         let text=questionText.value.trim();
-        if(!text) return alert("Питання пусте");
+        if(!text) return Swal.fire({
+            icon: "error",
+            title: "Помилка",
+            text: "Заповніть поля"
+        });
 
         let type=questionType.value;
         let options=[];
@@ -243,13 +271,25 @@
                 }
             });
 
-            if(options.length<2) return alert("мін 2 варіанти");
-            if(!correct) return alert("обери правильну");
+            if(options.length<2) return Swal.fire({
+                icon: "error",
+                title: "Помилка",
+                text: "Мінімум два питання"
+            });
+            if(!correct) return Swal.fire({
+                icon: "error",
+                title: "Помилка",
+                text: "Обери правильну відповідь"
+            });
         }
 
         if(type==="code"){
             correct=document.getElementById("codeAnswer").value.trim();
-            if(!correct) return alert("код пустий");
+            if(!correct) return Swal.fire({
+                icon: "error",
+                title: "Помилка",
+                text: "Код пустий"
+            });
         }
 
         const url = editQuestionId
@@ -274,12 +314,20 @@
             fields.innerHTML="";
             loadQuestions();
         });
+        Swal.fire({
+            icon: "icon",
+            title: "Питання збережено!"
+        });
         const textarea = document.getElementById('lessonTheory');
     }
 
     function fillQuestion() {
         const id = questionSelect.value;
-        if (!id) return alert("Обери питання");
+        if (!id) return Swal.fire({
+            icon: "error",
+            title: "Помилка",
+            text: "Обери питання"
+        });
 
         fetch(API + "/question/get/" + id)
             .then(r => r.json())
@@ -316,6 +364,10 @@
     function deleteQuestion(){
         fetch(API+"/question/"+questionSelect.value,{method:"DELETE"})
             .then(()=>loadQuestions());
+        Swal.fire({
+            icon: "info",
+            title: "Питання видалено!"
+        });
     }
 
     // ---------------- EVENTS ----------------

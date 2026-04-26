@@ -27,10 +27,13 @@ function register(event) {
         })
         .then(user => {
             localStorage.setItem("user", JSON.stringify(user));
-
-            alert("Реєстрація успішна");
-
-            window.location.href = "choose-language.html";
+            Swal.fire({
+                icon: "info",
+                title: "Реєстрація пройшла успішно!",
+                confirmButtonText: "Обрати перший курс"
+            }).then((result) => {
+                window.location.href = "choose-language.html";
+            });
         })
         .catch(err => {
             alert(err.message || "Помилка реєстрації");
@@ -49,8 +52,15 @@ function login(event) {
     if (email === "admin@gmail.com" && password === "2138") {
         window.location.href = "admin.html";
     } else {
+
         if (!email || !password) {
-            alert("Заповни всі поля");
+            Swal.fire({
+                icon: "eror",
+                title: "Заповніть всі поля!",
+                confirmButtonText: "На головну"
+            }).then((result) => {
+                window.location.href = "home.html";
+            });
             return;
         }
 
@@ -72,11 +82,21 @@ function login(event) {
             })
             .then(user => {
                 localStorage.setItem("user", JSON.stringify(user));
-                alert("Успішний вхід");
-                window.location.href = "home.html";
+                Swal.fire({
+                    icon: "success",
+                    title: "Успішний вхід!",
+                    confirmButtonText: "На головну"
+                }).then((result) => {
+                    window.location.href = "home.html";
+                });
             })
             .catch(err => {
-                alert(err.message || "Помилка входу");
+
+                Swal.fire({
+                    icon: "error",
+                    title: "Такого акаунку не існує!",
+                    confirmButtonText: "Повторити спробу"
+                })
             })
             .finally(() => {
                 btn.disabled = false;
