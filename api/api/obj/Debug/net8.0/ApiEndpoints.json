@@ -95,6 +95,54 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "api.Controllers.HeartController",
+    "Method": "GetHearts",
+    "RelativePath": "api/Heart/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.HeartController",
+    "Method": "CanStart",
+    "RelativePath": "api/Heart/can-start/{userId}",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.HeartController",
+    "Method": "LoseHeart",
+    "RelativePath": "api/Heart/lose/{userId}",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "userId",
+        "Type": "System.Int32",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "api.Controllers.LessonController",
     "Method": "AddLesson",
     "RelativePath": "api/Lesson",
@@ -181,7 +229,7 @@
   },
   {
     "ContainingType": "api.Controllers.ProgressController",
-    "Method": "SaveProgress",
+    "Method": "UpdateProgress",
     "RelativePath": "api/Progress",
     "HttpMethod": "POST",
     "IsController": true,
@@ -189,7 +237,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "api.DTO.SaveProgressDTO",
+        "Type": "api.DTO.ProgressDTO",
         "IsRequired": true
       }
     ],

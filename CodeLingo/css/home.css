@@ -246,3 +246,13 @@ body {
         padding: 15px;
     }
 }
+
+#heartTimer {
+    font-size: 14px;
+    color: gray;
+}
+
+.menu-item.selected {
+     border: 2px solid #00bfff;
+     border-radius: 10px;
+ }

@@ -6,6 +6,7 @@ namespace api.Models
     {
         public int Id { get; set; }
         public string Name { get; set; }
+        public bool IsFree { get; set; }
 
         [JsonIgnore] 
         public List<Lesson>? Lessons { get; set; } = new List<Lesson>();

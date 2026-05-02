@@ -15,58 +15,48 @@ namespace api.Controllers
         {
             _context = context;
         }
-
         [HttpPost]
-        public IActionResult SaveProgress([FromBody] SaveProgressDTO dto)
+        public IActionResult UpdateProgress([FromBody] ProgressDTO dto)
         {
-            int percent = (int)Math.Round((double)dto.CorrectAnswers / dto.TotalQuestions * 100);
-
-            bool isCompleted = percent >= 60;
-
-            int reward = 0;
-            if (isCompleted)
-            {
-                reward = 60 + (percent - 60);
-                if (reward > 100) reward = 100;
-            }
-
-            var progress = _context.Progresses
+            var existing = _context.Progresses
                 .FirstOrDefault(p => p.UserId == dto.UserId && p.LessonId == dto.LessonId);
 
-            if (progress == null)
+            int newPercentage = (int)((double)dto.CorrectAnswers / dto.TotalQuestions * 100);
+
+            if (existing == null)
             {
-                progress = new Progress
+                existing = new Progress
                 {
                     UserId = dto.UserId,
-                    LessonId = dto.LessonId
+                    LessonId = dto.LessonId,
+                    CorrectAnswers = dto.CorrectAnswers,
+                    TotalQuestions = dto.TotalQuestions,
+                    Percentage = newPercentage,
+                    IsCompleted = newPercentage >= 60
                 };
-                _context.Progresses.Add(progress);
+                _context.Progresses.Add(existing);
             }
-
-            progress.CorrectAnswers = dto.CorrectAnswers;
-            progress.TotalQuestions = dto.TotalQuestions;
-            progress.Percentage = percent;
-            progress.IsCompleted = isCompleted;
-            progress.Reward = reward;
-
-            var user = _context.Users.FirstOrDefault(u => u.Id == dto.UserId);
-
-            if (user != null && isCompleted)
+            else
             {
-                user.Diamonds += reward;
-
+                if (newPercentage > existing.Percentage)
+                {
+                    existing.CorrectAnswers = dto.CorrectAnswers;
+                    existing.TotalQuestions = dto.TotalQuestions;
+                    existing.Percentage = newPercentage;
+                    if (newPercentage >= 80) existing.IsCompleted = true;
+                }
+            }
+            var user = _context.Users.FirstOrDefault(u => u.Id == dto.UserId);
+            if (user != null && existing.IsCompleted)
+            {
+                // цей кусок коду тре переписати, бо він не враховує, що юзер може проходити декілька уроків в один день і отримувати нагороди за кожен
                 user.Streak += 1;
             }
 
             _context.SaveChanges();
-
-            return Ok(new
-            {
-                percent,
-                isCompleted,
-                reward
-            });
+            return Ok(existing);
         }
+
         [HttpGet("with-progress/{courseId}/{userId}")]
         public IActionResult GetLessonsWithProgress(int courseId, int userId)
         {
@@ -75,62 +65,49 @@ namespace api.Controllers
                 .OrderBy(l => l.Id)
                 .ToList();
 
+            var lessonIds = lessons.Select(l => l.Id).ToList();
             var progresses = _context.Progresses
-                .Where(p => p.UserId == userId)
+                .Where(p => p.UserId == userId && lessonIds.Contains(p.LessonId))
                 .ToList();
 
             var result = new List<object>();
 
             for (int i = 0; i < lessons.Count; i++)
             {
-                bool unlocked = false;
+                var currentLesson = lessons[i];
+                bool unlocked = i == 0;
 
-                if (i == 0)
+                if (i > 0)
                 {
-                    unlocked = true; 
+                    var prevLessonId = lessons[i - 1].Id;
+                    unlocked = progresses.Any(p => p.LessonId == prevLessonId && p.IsCompleted);
                 }
-                else
-                {
-                    var prevLesson = lessons[i - 1];
 
-                    unlocked = progresses.Any(p =>
-                        p.LessonId == prevLesson.Id && p.IsCompleted);
-                }
+                var progress = progresses.FirstOrDefault(p => p.LessonId == currentLesson.Id);
 
                 result.Add(new
                 {
-                    lessons[i].Id,
-                    lessons[i].Title,
-                    unlocked,
-                    isCompleted = progresses.Any(p =>
-                        p.LessonId == lessons[i].Id && p.IsCompleted)
+                    id = currentLesson.Id,
+                    title = currentLesson.Title,
+                    unlocked = unlocked,
+                    isCompleted = progress?.IsCompleted ?? false,
+                    percentage = progress?.Percentage ?? 0
                 });
             }
 
             return Ok(result);
         }
+
         [HttpGet("stats/{userId}")]
         public IActionResult GetStats(int userId)
         {
             var data = _context.Progresses
                 .Where(p => p.UserId == userId)
-                .Join(_context.Lessons,
-                    p => p.LessonId,
-                    l => l.Id,
-                    (p, l) => new { p, l })
-                .Join(_context.Courses,
-                    pl => pl.l.CourseId,
-                    c => c.Id,
-                    (pl, c) => new
-                    {
-                        c.Name,
-                        pl.p.CorrectAnswers,
-                        pl.p.TotalQuestions
-                    })
+                .Join(_context.Lessons, p => p.LessonId, l => l.Id, (p, l) => new { p, l })
+                .Join(_context.Courses, pl => pl.l.CourseId, c => c.Id, (pl, c) => new { c.Name, pl.p.CorrectAnswers, pl.p.TotalQuestions })
                 .ToList();
 
-            var result = data
-                .GroupBy(x => x.Name)
+            var result = data.GroupBy(x => x.Name)
                 .Select(g => new
                 {
                     course = g.Key,
@@ -140,61 +117,106 @@ namespace api.Controllers
 
             return Ok(result);
         }
+
         [HttpGet("{id}")]
         public IActionResult GetUser(int id)
         {
             var u = _context.Users.FirstOrDefault(x => x.Id == id);
-
             if (u == null) return NotFound();
-
             return Ok(u);
         }
         [HttpGet("full/{userId}")]
+
         public IActionResult GetFullProgress(int userId)
+
         {
-            // 🔥 тільки курси користувача
+
             var userCourses = _context.UserCourses
+
                 .Where(uc => uc.UserId == userId)
+
                 .Select(uc => uc.CourseId)
+
                 .ToList();
+
+
 
             var courses = _context.Courses
+
                 .Where(c => userCourses.Contains(c.Id))
+
                 .ToList();
 
+
+
             var progresses = _context.Progresses
+
                 .Where(p => p.UserId == userId)
+
                 .ToList();
+
+
 
             var lessons = _context.Lessons.ToList();
 
+
+
             var result = courses.Select(course =>
+
             {
+
                 var courseLessons = lessons.Where(l => l.CourseId == course.Id).ToList();
+
+
 
                 int lessonsTotal = courseLessons.Count;
 
+
+
                 int lessonsDone = courseLessons.Count(l =>
+
                     progresses.Any(p => p.LessonId == l.Id && p.IsCompleted));
 
+
+
                 var courseProgress = progresses
+
                     .Where(p => courseLessons.Any(l => l.Id == p.LessonId))
+
                     .ToList();
 
+
+
                 int correct = courseProgress.Sum(p => p.CorrectAnswers);
+
                 int total = courseProgress.Sum(p => p.TotalQuestions);
 
+
+
                 return new
+
                 {
+
                     course = course.Name,
+
                     correct,
+
                     total,
+
                     lessonsDone,
+
                     lessonsTotal
+
                 };
+
             });
 
+
+
             return Ok(result);
+
         }
+
     }
+
 }
