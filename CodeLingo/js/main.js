@@ -1,5 +1,3 @@
-const API = "https://localhost:7241/api";
-
 window.alert = function(message) {
     Swal.fire({
         text: message,

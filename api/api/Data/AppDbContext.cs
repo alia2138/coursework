@@ -11,6 +11,7 @@ public class AppDbContext : DbContext
     public DbSet<Lesson> Lessons { get; set; }
     public DbSet<UserCourse> UserCourses { get; set; }
     public DbSet<Progress> Progresses { get; set; }
+    public DbSet<ShopItem> ShopItems { get; set; }
 
     public AppDbContext(DbContextOptions<AppDbContext> options)
         : base(options)

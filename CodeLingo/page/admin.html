@@ -76,8 +76,24 @@
     <button class="admin-btn" onclick="fillQuestion()">✏️ Редагувати </button>
     <button class="admin-btn" onclick="deleteQuestion()">🗑 Видалити </button>
 
+
+
 </div>
 
+<div class="block">
+    <h2>Додати нову пропозицію до магазину</h2>
+    <form id="add-item-form" class="admin-form">
+        <input type="text" id="itemName" placeholder="Назва товару" required>
+        <select id="itemType">
+            <option value="hearts">Серця</option>
+            <option value="donate">Діаманти</option>
+        </select>
+        <input type="number" id="itemPrice" placeholder="Ціна" required>
+        <input type="number" id="itemValue" placeholder="Скільки ви отримаєте">
+
+        <button type="submit">Додати в магазин</button>
+    </form>
+</div>
 <script>
     const API = "https://localhost:7241/api";
 
@@ -375,7 +391,45 @@
     lessonSelect.onchange=()=>loadQuestions();
 
     // старт
-    loadCourses();
+    document.getElementById('add-item-form').addEventListener('submit', async (e) => {
+        e.preventDefault();
+
+        const newItem = {
+            name: document.getElementById('itemName').value.trim(),
+            type: document.getElementById('itemType').value, // Тепер бере значення з select
+            price: parseInt(document.getElementById('itemPrice').value),
+            value: parseInt(document.getElementById('itemValue').value) || 0,
+            courseId: null
+        };
+
+        if (!newItem.name || isNaN(newItem.price)) {
+            return Swal.fire("Помилка", "Заповніть назву та ціну", "error");
+        }
+
+        try {
+            const response = await fetch(API + '/shop', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(newItem)
+            });
+
+            if (response.ok) {
+                Swal.fire({
+                    icon: "success",
+                    title: "Додано!",
+                    text: "Товар з'явився у магазині"
+                }).then(() => location.reload());
+            } else {
+                Swal.fire("Помилка", "Сервер відхилив запит", "error");
+            }
+        } catch (error) {
+            console.error('Помилка:', error);
+        }
+    });  loadCourses();
+
+    // ---------------- SHOP ----------------
+
+
 </script>
 
 </body>

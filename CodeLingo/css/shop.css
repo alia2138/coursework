@@ -1,107 +1,92 @@
-.shop-title {
+body {
+    background: #f5f7fb;
+    margin: 0;
+    padding: 0 250px;
+    font-family: Arial, sans-serif;
     text-align: center;
-    margin-top: 30px;
-    font-size: 28px;
 }
 
-/* контейнер */
-.shop {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin: 40px 20px;
-    flex-wrap: wrap;
+.shop-wrapper {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px 0;
 }
 
-/* карточка */
-.item {
-    background: #ffffff;
-    padding: 25px;
-    border-radius: 15px;
-    text-align: center;
-
-    flex: 1 1 220px; /* 🔥 адаптивність */
-    max-width: 250px;
-
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    transition: 0.2s;
+h2 {
+    padding: 0 200px;
+    font-size: 22px;
+    color: #333;
 }
 
-.item:hover {
-    transform: translateY(-5px);
-}
-
-/* кнопка купити */
-.item button {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #00bfff;
-    color: #ffffff;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    transition: 0.2s;
+.shop-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
     width: 100%;
 }
 
-.item button:hover {
-    background: #00aeff;
+.shop-card {
+    background: white;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+
+    text-align: center;
+    cursor: pointer;
+
+    border: 2px solid transparent;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    transition: 0.2s;
 }
 
-/* кнопка назад */
-.back-btn {
+.shop-card:hover {
+    transform: translateY(-5px);
+    border-color: #00bfff;
+}
+
+.shop-card.locked {
+    background: #ddd;
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.shop-card .title {
+    font-weight: bold;
+    margin-bottom: 6px;
     display: block;
-    width: 41.5%;
-    max-width: 90%;
-    margin: 20px auto;
-    padding: 14px;
+}
+
+.shop-card .price {
+    color: #007acc;
+}
+
+.back-btn {
+    display: inline-block;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto 20px;
+    padding: 12px;
 
     background: #00bfff;
     color: white;
 
     border: none;
-    border-radius: 12px;
-
+    border-radius: 10px;
     cursor: pointer;
-    transition: 0.2s;
-    font-size: 16px;
+    font-weight: bold;
 }
 
 .back-btn:hover {
     background: #009acd;
 }
 
-.back-btn:active {
-    transform: scale(0.96);
-}
-
-/* 📱 адаптація */
-@media (max-width: 768px) {
-    .shop-title {
-        font-size: 24px;
-    }
-
-    .shop {
-        gap: 15px;
-    }
-
-    .item {
-        padding: 20px;
-    }
-}
-
-@media (max-width: 480px) {
-    .shop {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .item {
-        width: 100%;
-        max-width: 350px;
+/* 📱 мобілка */
+@media (max-width: 500px) {
+    .shop-grid {
+        grid-template-columns: 1fr; /* 1 колонка */
     }
 
     .back-btn {
-        width: 100%;
+        width: 80%; /* На мобільних можна трохи ширше */
     }
 }

@@ -414,6 +414,48 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "api.Controllers.ShopController",
+    "Method": "GetAll",
+    "RelativePath": "api/Shop",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.ShopController",
+    "Method": "Create",
+    "RelativePath": "api/Shop",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "api.DTO.ShopItemDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "api.Controllers.ShopController",
+    "Method": "Buy",
+    "RelativePath": "api/Shop/buy",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "dto",
+        "Type": "api.DTO.BuyDTO",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "api.Controllers.UserController",
     "Method": "GetUser",
     "RelativePath": "api/User/{id}",
