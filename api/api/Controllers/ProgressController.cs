@@ -23,6 +23,8 @@ namespace api.Controllers
 
             int newPercentage = (int)((double)dto.CorrectAnswers / dto.TotalQuestions * 100);
 
+            int oldPercent = existing?.Percentage ?? 0;
+
             if (existing == null)
             {
                 existing = new Progress
@@ -43,20 +45,63 @@ namespace api.Controllers
                     existing.CorrectAnswers = dto.CorrectAnswers;
                     existing.TotalQuestions = dto.TotalQuestions;
                     existing.Percentage = newPercentage;
-                    if (newPercentage >= 80) existing.IsCompleted = true;
+
+                    if (newPercentage >= 60)
+                        existing.IsCompleted = true;
                 }
             }
+
             var user = _context.Users.FirstOrDefault(u => u.Id == dto.UserId);
-            if (user != null && existing.IsCompleted)
+
+            int reward = 0;
+
+            if (user != null && newPercentage >= 60)
             {
-                // цей кусок коду тре переписати, бо він не враховує, що юзер може проходити декілька уроків в один день і отримувати нагороди за кожен
-                user.Streak += 1;
+                int diff = newPercentage - oldPercent;
+
+                if (diff > 0)
+                {
+                    reward = diff;
+                    user.Diamonds += reward;
+                }
+
+                var today = DateTime.UtcNow.Date;
+
+                if (user.LastLessonDate == null)
+                {
+                    user.Streak = 1;
+                }
+                else
+                {
+                    var lastDate = user.LastLessonDate.Value.Date;
+
+                    if (lastDate == today)
+                    {
+                        // нічого
+                    }
+                    else if (lastDate == today.AddDays(-1))
+                    {
+                        user.Streak += 1;
+                    }
+                    else
+                    {
+                        user.Streak = 1;
+                    }
+                }
+
+                user.LastLessonDate = today;
             }
 
             _context.SaveChanges();
-            return Ok(existing);
-        }
 
+            return Ok(new
+            {
+                percentage = newPercentage,
+                isCompleted = existing.IsCompleted,
+                reward = reward,
+                streak = user?.Streak ?? 0
+            });
+        }
         [HttpGet("with-progress/{courseId}/{userId}")]
         public IActionResult GetLessonsWithProgress(int courseId, int userId)
         {

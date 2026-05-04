@@ -196,7 +196,10 @@ function finishLesson() {
                 icon = "warning";
                 title = "Спробуй ще раз 📚";
             }
-
+            if (res.reward > 0) {
+                user.diamonds += res.reward;
+                localStorage.setItem("user", JSON.stringify(user));
+            }
             Swal.fire({
                 icon: icon,
                 title: title,
@@ -211,4 +214,8 @@ function finishLesson() {
             Swal.fire("Помилка", "Не вдалося зберегти прогрес", "error");
         });
     updateLiveProgress()
+    if (res.streak !== undefined) {
+        user.streak = res.streak;
+        localStorage.setItem("user", JSON.stringify(user));
+    }
 }

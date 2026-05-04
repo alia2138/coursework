@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>Оплата</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</head>
+
+<style>body {
+    font-family: sans-serif;
+    background: #f5f5f5;
+}
+
+.pay-container {
+    width: 320px;
+    margin: 100px auto;
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+input {
+    width: 90%;
+    margin: 8px 0;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+}
+
+button {
+    margin-top: 10px;
+    width: 97%;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: #00bfff;
+    color: white;
+    cursor: pointer;
+}
+</style>
+
+<body>
+
+<div class="pay-container">
+
+    <h2>Оплата</h2>
+
+    <div id="amountText"></div>
+
+    <input id="cardNumber" placeholder="1111 2222 3333 4444">
+    <input id="cardDate" placeholder="MM/YY">
+    <input id="cardCVV" placeholder="CVV">
+
+    <button class="btn-pay" onclick="pay()">Оплатити</button>
+    <button class="btn-cancel" onclick="cancel()">Скасувати</button>
+
+</div>
+
+<script>
+    let user = JSON.parse(localStorage.getItem("user")) || { diamonds: 0 };
+
+    const params = new URLSearchParams(window.location.search);
+    const diamonds = Number(params.get("diamonds")) || 0;
+    const price = Number(params.get("price")) || 0;
+
+    document.getElementById("amountText").innerText =
+        `Купівля: ${diamonds} 💎 за ${price} грн`;
+
+    function pay() {
+        const card = document.getElementById("cardNumber").value.trim();
+        const date = document.getElementById("cardDate").value.trim();
+        const cvv = document.getElementById("cardCVV").value.trim();
+
+        if (card.length < 13 || date.length < 5 || cvv.length < 3) {
+            Swal.fire({
+                icon: "warning",
+                title: "Помилка",
+                text: "Будь ласка, коректно заповніть всі поля!"
+            });
+            return;
+        }
+
+        Swal.fire({
+            title: 'Обробка платежу...',
+            allowOutsideClick: false,
+            didOpen: () => {
+                Swal.showLoading();
+            }
+        });
+
+        setTimeout(() => {
+            // Оновлюємо баланс
+            user.diamonds += diamonds;
+            localStorage.setItem("user", JSON.stringify(user));
+
+            Swal.fire({
+                icon: "success",
+                title: "Оплата успішна!",
+                text: `Ви отримали ${diamonds} діамантів. Дякуємо за підтримку!`,
+                confirmButtonText: "Чудово!"
+            }).then(() => {
+                window.location.href = "shop.html";
+            });
+        }, 1500);
+    }
+
+    function cancel() {
+        window.location.href = "shop.html";
+    }
+
+    document.getElementById('cardNumber').addEventListener('input', function (e) {
+        e.target.value = e.target.value.replace(/[^\d]/g, '').replace(/(.{4})/g, '$1 ').trim();
+    });
+</script>
+
+</body>
+</html>

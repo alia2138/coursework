@@ -5,10 +5,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\heartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\heartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,21 +14,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "HeartController.cs",
-              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\HeartController.cs",
-              "RelativeDocumentMoniker": "api\\Controllers\\HeartController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\HeartController.cs",
-              "RelativeToolTip": "api\\Controllers\\HeartController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAALAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T14:42:24.515Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 0,
@@ -41,9 +24,9 @@
               "RelativeDocumentMoniker": "api\\Controllers\\ShopController.cs",
               "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\ShopController.cs*",
               "RelativeToolTip": "api\\Controllers\\ShopController.cs*",
-              "ViewState": "AgIAAFAAAAAAAAAAAAAAwF8AAAAqAAAAAAAAAA==",
+              "ViewState": "AgIAAH0AAAAAAAAAAAAuwJoAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-02T15:00:40.438Z",
+              "WhenOpened": "2026-05-03T15:43:21.611Z",
               "EditorCaption": ""
             }
           ]

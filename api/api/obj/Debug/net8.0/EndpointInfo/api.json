@@ -1148,6 +1148,11 @@
             "type": "integer",
             "format": "int32"
           },
+          "lastLessonDate": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
           "userCourses": {
             "type": "array",
             "items": {

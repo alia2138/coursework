@@ -2,20 +2,38 @@
 using api.DTO;
 using api.Models;
 using Microsoft.AspNetCore.Mvc;
-using System.Linq;
+using Microsoft.EntityFrameworkCore;
+using System.Globalization;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.Json;
 
 namespace api.Controllers
 {
     [ApiController]
     [Route("api/[controller]")]
+
     public class ShopController : ControllerBase
     {
         private readonly AppDbContext _context;
+        private readonly string _publicKey = "sandbox_i1675738884";
+        private readonly string _privateKey = "sandbox_Rs6QPNmuK0sqIy3cw8FWDftULjovd17xKWBveOP5";
 
         public ShopController(AppDbContext context)
         {
             _context = context;
         }
+
+        private string CreateSignature(string privateKey, string data)
+        {
+            var rawSignature = privateKey + data + privateKey;
+            using (var sha1 = System.Security.Cryptography.SHA1.Create())
+            {
+                byte[] hashBytes = sha1.ComputeHash(Encoding.UTF8.GetBytes(rawSignature));
+                return Convert.ToBase64String(hashBytes);
+            }
+        }
+
         [HttpGet]
         public IActionResult GetAll()
         {
@@ -34,7 +52,7 @@ namespace api.Controllers
             var courses = _context.Courses
                 .Select(c => new ShopItemDTO
                 {
-                    Id = -c.Id, 
+                    Id = -c.Id,
                     Name = c.Name,
                     Type = "course",
                     Price = 1000,
@@ -53,7 +71,6 @@ namespace api.Controllers
             var user = _context.Users.FirstOrDefault(u => u.Id == dto.UserId);
             if (user == null) return BadRequest();
 
-            // 📚 КУРС
             if (dto.ItemId < 0)
             {
                 int courseId = Math.Abs(dto.ItemId);
@@ -80,7 +97,6 @@ namespace api.Controllers
                 return Ok(new { success = true, diamonds = user.Diamonds });
             }
 
-            // 🔹 ІНШІ ТОВАРИ
             var item = _context.ShopItems.FirstOrDefault(x => x.Id == dto.ItemId);
             if (item == null)
                 return Ok(new { success = false, message = "Item не знайдено" });

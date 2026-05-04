@@ -1,5 +1,10 @@
 const API = "https://localhost:7241/api";
-const user = JSON.parse(localStorage.getItem("user"));
+let user = JSON.parse(localStorage.getItem("user"));
+
+if (!user) {
+    alert("Ти не авторизована");
+    window.location.href = "login.html";
+}
 
 const currencyContainer = document.getElementById("heartsContainer");
 const coursesContainer = document.getElementById("coursesContainer");
@@ -14,9 +19,6 @@ function loadShop() {
         fetch(API + "/usercourse/" + user.id).then(r => r.json())
     ])
         .then(([items, userCourses]) => {
-
-            console.log("SHOP ITEMS:", items);
-            console.log("USER COURSES:", userCourses);
 
             userCourses = userCourses || [];
 
@@ -39,10 +41,17 @@ function loadShop() {
                     div.classList.add("locked");
                 }
 
+                let currency = "💎";
+
+                if (item.type.toLowerCase() === "donate") {
+                    currency = "грн";
+                }
+
                 div.innerHTML = `
-                <div class="title">${item.name}</div>
-                <div class="price">${item.price} 💎</div>
-                `;
+                <div class="shop-title">${item.name}</div>
+                <div class="shop-price">${item.price} ${currency}</div>
+                 `;
+
 
                 if (!isOwned) {
                     div.onclick = () => buyItem(item);
@@ -69,9 +78,17 @@ function loadShop() {
 
 function buyItem(item) {
 
-    let text = item.type === "donate"
-        ? "Купити за реальні гроші?"
-        : `Ціна: ${item.price} 💎`;
+    const type = item.type.toLowerCase();
+
+    if (type === "donate") {
+
+        window.location.href =
+            `pay.html?diamonds=${item.value}&price=${item.price}`;
+
+        return;
+    }
+
+    let text = `Ціна: ${item.price} 💎`;
 
     Swal.fire({
         title: item.name,
@@ -96,21 +113,31 @@ function buyItem(item) {
             .then(res => {
 
                 if (!res.success) {
-                    Swal.fire(res.message || "Помилка");
+                    Swal.fire({
+                        icon: "error",
+                        title: res.message || "Помилка"
+                    });
                     return;
                 }
 
-                user.diamonds = res.diamonds;
-                user.hearts = res.hearts || user.hearts;
+                if (res.diamonds !== undefined)
+                    user.diamonds = res.diamonds;
+
+                if (res.hearts !== undefined)
+                    user.hearts = res.hearts;
 
                 localStorage.setItem("user", JSON.stringify(user));
 
-                document.getElementById("diamonds").innerText = user.diamonds;
+                const d = document.getElementById("diamonds");
+                if (d) d.innerText = user.diamonds;
 
                 const h = document.getElementById("hearts");
                 if (h) h.innerText = user.hearts;
 
-                Swal.fire("Успішно!");
+                Swal.fire({
+                    icon: "success",
+                    title: "Куплено!"
+                });
 
                 loadShop();
             });

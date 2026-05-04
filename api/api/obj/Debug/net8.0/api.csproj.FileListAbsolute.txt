@@ -137,3 +137,5 @@ C:\Users\User\Desktop\курсач\api\api\bin\Debug\net8.0\tr\Microsoft.CodeAna
 C:\Users\User\Desktop\курсач\api\api\bin\Debug\net8.0\zh-Hans\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\User\Desktop\курсач\api\api\bin\Debug\net8.0\zh-Hant\Microsoft.CodeAnalysis.Workspaces.MSBuild.BuildHost.resources.dll
 C:\Users\User\Desktop\курсач\api\api\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
+C:\Users\User\Desktop\курсач\api\api\bin\Debug\net8.0\LiqPay.SDK.dll
+C:\Users\User\Desktop\курсач\api\api\bin\Debug\net8.0\Newtonsoft.Json.dll

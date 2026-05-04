@@ -13,6 +13,7 @@ public class User
 
     public int Diamonds { get; set; } = 100;
     public int Streak { get; set; } = 0;
+    public DateTime? LastLessonDate { get; set; }
 
     public List<UserCourse> UserCourses { get; set; }
 }

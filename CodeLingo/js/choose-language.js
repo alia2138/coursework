@@ -61,7 +61,10 @@ function confirmLang() {
             return res.text();
         })
         .then(() => {
-            alert("Курс обрано!");
+            Swal.fire({
+                icon: "info",
+                title: "Курс обрано)"
+            })
             window.location.href = "home.html";
         })
         .catch(err => {
