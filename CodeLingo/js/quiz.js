@@ -111,7 +111,20 @@ function checkAnswer() {
 
         Swal.fire({
             icon: "error",
-            title: "Помилка"
+            title: "Помилка ❌",
+            html: `
+            <p><b>Правильна відповідь:</b></p>
+            <div style="
+                margin-top:10px;
+                padding:12px;
+                background:#f1f1f1;
+                border-radius:10px;
+                font-size:18px;
+                color:#333;
+            ">
+                ${q.correctAnswer}
+            </div>
+        `
         });
     }
 

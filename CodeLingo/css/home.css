@@ -51,10 +51,6 @@ body {
     border: 2px solid #00bfff;
 }
 
-.sidebar-bottom {
-    margin-top: auto;
-}
-
 .shop-btn {
     width: 100%;
     padding: 14px;
@@ -88,9 +84,16 @@ body {
 }
 
 .stat {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
     background: #e4f6fd;
-    padding: 8px 12px;
-    border-radius: 20px;
+    padding: 10px 16px;
+    border-radius: 30px;
+
+    font-size: 18px;
+    font-weight: 600;
 }
 
 .levels-container {
@@ -171,88 +174,101 @@ body {
     opacity: 0.5;
     pointer-events: none;
 }
-@media (max-width: 600px) {
 
-    /* layout */
+
+@media (max-width: 900px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .level {
+        width: 80px;
+        height: 80px;
+        font-size: 22px;
+    }
+}
+
+@media (max-width: 600px) {
     .layout {
         flex-direction: column;
-        height: auto;
     }
 
-    /* SIDEBAR як верхній блок */
     .sidebar {
         width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        padding: 15px;
-        gap: 10px;
-    }
-
-    /* логотип по центру */
-    .logo {
-        text-align: center;
-        width: 100%;
-    }
-
-    /* меню мов */
-    .menu {
-        display: flex;
         flex-direction: row;
-        gap: 10px;
-        flex-wrap: wrap;
-        justify-content: center;
-    }
-
-    /* кнопки вниз */
-    .sidebar-bottom {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 10px;
-        margin-top: 10px;
-    }
-
-    .profile-btn,
-    .shop-btn {
-        width: 45%;
+        overflow-x: auto;
         padding: 10px;
-        font-size: 14px;
     }
 
-    /* MAIN */
-    .main {
+    .sidebar-top {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+    }
+
+    .menu {
+        flex-direction: row;
+        overflow-x: auto;
+    }
+
+    .menu-item {
+        white-space: nowrap;
+    }
+
+    .sidebar-bottom {
+        position: fixed;
+        bottom: 0;
+        left: 0;
         width: 100%;
+
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+
+        background: white;
+        box-shadow: 0 -2px 10px rgba(0,0,0,0.1);
     }
 
-    /* валюта зверху справа */
+    .main {
+        padding: 15px;
+    }
+
     .topbar {
+        display: flex;
+        gap: 15px;
+        padding: 15px;
+        width: 10vh;
+        flex-direction: row;
         justify-content: flex-end;
-        padding: 10px 15px;
+        position: absolute;
+        top: 15vh;
+        right: 0;
     }
 
     .stat {
         font-size: 14px;
-        padding: 6px 10px;
+        padding: 8px 10px;
     }
 
-    /* прогрес */
-    .progress-bar {
-        width: 95%;
+    .level {
+        width: 70px;
+        height: 70px;
+        font-size: 20px;
     }
 
-    /* рівні */
-    .level-card {
-        padding: 15px;
+    .profile-btn {
+        width: 22vh;
+        height: 5vh;
+    }
+
+    .shop-btn {
+        width: 22vh;
+        height: 5vh;
+    }
+
+    .progress-bar{
+    }
+
+    .progress-fill{
     }
 }
-
-#heartTimer {
-    font-size: 14px;
-    color: gray;
-}
-
-.menu-item.selected {
-     border: 2px solid #00bfff;
-     border-radius: 10px;
- }

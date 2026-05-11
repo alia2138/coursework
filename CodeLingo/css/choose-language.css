@@ -55,3 +55,43 @@ button:hover {
     color: red;
     margin-top: 10px;
 }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 30px;
+    }
+
+    .languages div {
+        font-size: 18px;
+    }
+
+    button {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    h1 {
+        font-size: 24px;
+    }
+
+    .languages div {
+        font-size: 17px;
+        padding: 18px;
+    }
+
+    button {
+        font-size: 15px;
+        padding: 12px;
+    }
+}
+
+@media (max-width: 360px) {
+    h1 {
+        font-size: 20px;
+    }
+
+    .languages div {
+        font-size: 15px;
+    }
+}

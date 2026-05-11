@@ -249,3 +249,18 @@ document.addEventListener("DOMContentLoaded", () => {
     loadGlobalProgress();
     setTimeout(startHeartTimer, 500);
 });
+
+function updateFireUI() {
+    const fire = document.getElementById("fireIcon");
+    const count = document.getElementById("streakCount");
+
+    if (!fire || !count) return;
+
+    count.innerText = user.streak;
+
+    if (user.streak > 0) {
+        fire.classList.remove("fire-off");
+    } else {
+        fire.classList.add("fire-off");
+    }
+}

@@ -3,8 +3,92 @@
   "WorkspaceRootPath": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\heartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\heartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\progresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\progresscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\saveprogressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\saveprogressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\progressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\progressdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\progress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\progress.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\shopcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\buydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\buydto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\shopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\shopitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\registerrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\liqpayresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\liqpayresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\questioncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\question.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\lessoncontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\createquestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\createquestiondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\lesson.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\createlessondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\createlessondto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\controllers\\coursecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\dto\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\dto\\createcoursedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|c:\\users\\user\\desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|api\\api.csproj|solutionrelative:api\\models\\course.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,15 +103,267 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "HeartController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\HeartController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\HeartController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\HeartController.cs",
+              "RelativeToolTip": "api\\Controllers\\HeartController.cs",
+              "ViewState": "AgIAAEsAAAAAAAAAAAA9wFoAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:13:51.23Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ProgressController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\ProgressController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\ProgressController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\ProgressController.cs",
+              "RelativeToolTip": "api\\Controllers\\ProgressController.cs",
+              "ViewState": "AgIAAPQAAAAAAAAAAAAAAAABAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:12:11.292Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SaveProgressDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\SaveProgressDTO.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\SaveProgressDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\SaveProgressDTO.cs",
+              "RelativeToolTip": "api\\DTO\\SaveProgressDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:11:53.948Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ProgressDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\ProgressDTO.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\ProgressDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\ProgressDTO.cs",
+              "RelativeToolTip": "api\\DTO\\ProgressDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:11:42.531Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Progress.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Progress.cs",
+              "RelativeDocumentMoniker": "api\\Models\\Progress.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Progress.cs",
+              "RelativeToolTip": "api\\Models\\Progress.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAA2wAwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:11:26.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "ShopController.cs",
               "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\ShopController.cs",
               "RelativeDocumentMoniker": "api\\Controllers\\ShopController.cs",
-              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\ShopController.cs*",
-              "RelativeToolTip": "api\\Controllers\\ShopController.cs*",
-              "ViewState": "AgIAAH0AAAAAAAAAAAAuwJoAAAABAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\ShopController.cs",
+              "RelativeToolTip": "api\\Controllers\\ShopController.cs",
+              "ViewState": "AgIAAIMAAAAAAAAAAAAQwIsAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-03T15:43:21.611Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-05-08T08:07:11.488Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "BuyDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\BuyDTO.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\BuyDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\BuyDTO.cs",
+              "RelativeToolTip": "api\\DTO\\BuyDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:06:38.187Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ShopItem.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\ShopItem.cs",
+              "RelativeDocumentMoniker": "api\\Models\\ShopItem.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\ShopItem.cs",
+              "RelativeToolTip": "api\\Models\\ShopItem.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:05:57.49Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "api\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAE4AAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:03:28.568Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "RegisterRequest.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\RegisterRequest.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\RegisterRequest.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\RegisterRequest.cs",
+              "RelativeToolTip": "api\\DTO\\RegisterRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:03:00.02Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "LiqPayResponse.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\LiqPayResponse.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\LiqPayResponse.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\LiqPayResponse.cs",
+              "RelativeToolTip": "api\\DTO\\LiqPayResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:02:42.518Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "api\\Models\\LoginRequest.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "api\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:02:30.256Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\User.cs",
+              "RelativeDocumentMoniker": "api\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\User.cs",
+              "RelativeToolTip": "api\\Models\\User.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAgwA4AAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T08:02:09.956Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "QuestionController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\QuestionController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\QuestionController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\QuestionController.cs",
+              "RelativeToolTip": "api\\Controllers\\QuestionController.cs",
+              "ViewState": "AgIAAHMAAAAAAAAAAAAmwIUAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:54:57.356Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "Question.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Question.cs",
+              "RelativeDocumentMoniker": "api\\Models\\Question.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Question.cs",
+              "RelativeToolTip": "api\\Models\\Question.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAswA8AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:54:46.078Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "LessonController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\LessonController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\LessonController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\LessonController.cs",
+              "RelativeToolTip": "api\\Controllers\\LessonController.cs",
+              "ViewState": "AgIAAEwAAAAAAAAAAAAmwGMAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:54:19.242Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CreateQuestionDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\CreateQuestionDTO.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\CreateQuestionDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\CreateQuestionDTO.cs",
+              "RelativeToolTip": "api\\DTO\\CreateQuestionDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:53:58.373Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "CreateLessonDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\CreateLessonDTO.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\CreateLessonDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\CreateLessonDTO.cs",
+              "RelativeToolTip": "api\\DTO\\CreateLessonDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:53:46.202Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Lesson.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Lesson.cs",
+              "RelativeDocumentMoniker": "api\\Models\\Lesson.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Lesson.cs",
+              "RelativeToolTip": "api\\Models\\Lesson.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:53:28.671Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "CourseController.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\CourseController.cs",
+              "RelativeDocumentMoniker": "api\\Controllers\\CourseController.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Controllers\\CourseController.cs",
+              "RelativeToolTip": "api\\Controllers\\CourseController.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAIwDYAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:52:05.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "CreateCourseDTO.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\CreateCourseDTO.cs",
+              "RelativeDocumentMoniker": "api\\DTO\\CreateCourseDTO.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\DTO\\CreateCourseDTO.cs",
+              "RelativeToolTip": "api\\DTO\\CreateCourseDTO.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:51:53.53Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "Course.cs",
+              "DocumentMoniker": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Course.cs",
+              "RelativeDocumentMoniker": "api\\Models\\Course.cs",
+              "ToolTip": "C:\\Users\\User\\Desktop\\\u043A\u0443\u0440\u0441\u0430\u0447\\api\\api\\Models\\Course.cs",
+              "RelativeToolTip": "api\\Models\\Course.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-05-08T07:51:12.972Z"
             }
           ]
         }

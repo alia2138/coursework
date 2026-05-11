@@ -79,24 +79,52 @@ body {
     text-decoration: none;
 }
 
-/* 📱 АДАПТАЦІЯ */
-@media (max-width: 500px) {
+@media (max-width: 768px) {
     .auth-card {
         padding: 25px;
+        top: -10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        align-items: flex-start;
+        padding-top: 40px;
+    }
+
+    .auth-card {
+        padding: 20px;
         border-radius: 15px;
+        top: -100px;
     }
 
     .logo {
         font-size: 24px;
     }
 
-    .auth-card h2 {
+    h2 {
         font-size: 20px;
     }
 
-    .auth-card input,
-    .auth-card button {
-        font-size: 14px;
+    form input {
         padding: 10px;
+        font-size: 14px;
+    }
+
+    form button {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+@media (max-width: 360px) {
+    .auth-card {
+        padding: 15px;
+        top: -100px;
+    }
+
+    form input,
+    form button {
+        font-size: 13px;
     }
 }

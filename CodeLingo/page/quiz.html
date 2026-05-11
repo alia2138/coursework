@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Тест</title>
-    <link rel="stylesheet" href="../css/main.css">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         .progress-bar {
@@ -85,6 +84,112 @@
 
         .btn:hover {
             background: #009acd;
+        }
+
+        /* ===== БАЗА КРАЩЕ ВИГЛЯДАЄ ===== */
+        body {
+            background: #f7f7fb;
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        /* питання */
+        .question {
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        /* відповіді як карточки */
+        .answer {
+            padding: 18px;
+            border-radius: 15px;
+            border: 2px solid #eee;
+            transition: 0.2s;
+        }
+
+        .answer:hover {
+            border-color: #00bfff;
+            transform: scale(1.01);
+        }
+
+        /* drag елементи */
+        .draggable {
+            border-radius: 15px;
+        }
+
+        /* textarea */
+        textarea {
+            font-size: 16px;
+        }
+
+        /* кнопка */
+        .btn {
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                margin: 20px auto;
+            }
+
+            .question {
+                font-size: 22px;
+            }
+        }
+        @media (max-width: 480px) {
+
+            .container {
+                margin: 10px;
+                padding: 18px;
+            }
+
+            /* питання */
+            .question {
+                font-size: 24px;
+                margin-bottom: 20px;
+                line-height: 1.3;
+            }
+
+            /* відповіді */
+            .answer {
+                padding: 20px;
+                font-size: 18px;
+                border-radius: 18px;
+            }
+
+            /* drag елементи */
+            .draggable {
+                padding: 18px;
+                font-size: 18px;
+                border-radius: 18px;
+            }
+
+            /* textarea */
+            textarea {
+                height: 130px;
+                font-size: 16px;
+                padding: 15px;
+                border-radius: 15px;
+            }
+
+            .btn {
+                font-size: 20px;
+                padding: 16px;
+                border-radius: 16px;
+            }
+
+            .progress-bar,
+            .quiz-progress-container {
+                height: 14px;
+                border-radius: 10px;
+            }
         }
     </style>
 </head>
